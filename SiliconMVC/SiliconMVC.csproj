@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="wwwroot\img\appstore.svg" />
+    <None Include="wwwroot\img\arrows.svg" />
+    <None Include="wwwroot\img\googleplay.svg" />
+    <None Include="wwwroot\img\icons\brand1.svg" />
+    <None Include="wwwroot\img\icons\bx-check-circle.svg" />
+    <None Include="wwwroot\img\icons\comment_on_tasks.svg" />
+    <None Include="wwwroot\img\icons\Dropbox.svg" />
+    <None Include="wwwroot\img\icons\Evernote.svg" />
+    <None Include="wwwroot\img\icons\Gmail.svg" />
+    <None Include="wwwroot\img\icons\Google.svg" />
+    <None Include="wwwroot\img\icons\Mailchimp.svg" />
+    <None Include="wwwroot\img\icons\star.svg" />
+    <None Include="wwwroot\img\icons\Trello.svg" />
+    <None Include="wwwroot\img\icons\Zoom.svg" />
+    <None Include="wwwroot\img\logoipsum1.svg" />
+    <None Include="wwwroot\img\logoipsum2.svg" />
+    <None Include="wwwroot\img\logoipsum3.svg" />
+    <None Include="wwwroot\img\logoipsum4.svg" />
+    <None Include="wwwroot\img\silicon-logo-icon.svg" />
+    <None Include="wwwroot\img\silicon-logo.svg" />
+  </ItemGroup>
+
+</Project>

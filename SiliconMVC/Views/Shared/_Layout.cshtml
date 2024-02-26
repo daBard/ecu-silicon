@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewData["Title"] - Silicon</title>
+    <meta name="description" content="This is an assignment for Webutvecklare inom .NET">
+    <meta name="keywords" content="education, webdev, fullstack">
+    <meta name="author" content="Silicon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON -->
+    <partial name="_Favicons.cshtml" />
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
+    <!-- FONTAWESOME -->
+    <!-- <script defer src="https://kit.fontawesome.com/3684d119b8.js" crossorigin="anonymous"></script> -->
+    <script defer src="https://kit.fontawesome.com/41c8b474e2.js" crossorigin="anonymous"></script>
+
+    <!-- SCRIPTS  -->
+    <script defer src="~/js/site.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        @* HEADER *@
+        <partial name="~/Views/Shared/Headers/_DefaultHeaderPartial.cshtml" />
+
+        <main>
+            @RenderBody()
+        </main>
+
+        @* FOOTER *@
+        <partial name="~/Views/Shared/Footers/_DefaultFooterPartial.cshtml" />
+    </div>
+</body>
+</html>

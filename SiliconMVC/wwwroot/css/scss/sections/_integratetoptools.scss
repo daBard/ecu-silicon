@@ -1,0 +1,41 @@
+section.integratetoptools {
+    .ingress {
+        padding: 1rem 0 3rem 0;
+        text-align: center;
+
+        @include lg {
+            max-width: 50dvw;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        @include md {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        @include xl {
+            margin: 0;
+        }
+
+        .grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+
+            @include md {
+                align-items: flex-start;
+            }
+
+            &:hover {
+                @include shadow-s;
+            }
+
+            p { padding-top: 1rem; }
+        }
+    }
+}

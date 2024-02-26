@@ -1,0 +1,45 @@
+section.manageyourwork {
+    .container {
+        flex-direction: column-reverse;
+        gap: none;
+
+        @include lg {
+            flex-direction: row;
+            gap: 5rem;
+        }
+
+        img {
+
+            @include lg {
+                max-width: 45%;
+            }
+
+            @include xl {
+                max-width: 65%;
+            }
+            
+        }
+
+        .content {
+            ul { 
+                padding: 2rem 0;
+            
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding-bottom: .75rem;
+
+                    &::before {
+                        height: 22px;
+                        width: 22px;
+                        content: "";
+                        display: inline-block;
+                        background-image: url(/img/icons/bx-check-circle.svg);
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}

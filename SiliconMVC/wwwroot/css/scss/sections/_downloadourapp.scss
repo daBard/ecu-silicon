@@ -1,0 +1,26 @@
+section.downloadourapp {
+    background-color: $gray-100;
+
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 3rem;
+
+        @include lg {
+            flex-direction: row;
+        }
+
+        .content {
+            gap: 3rem;
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            @include lg {
+                max-width: 33%;
+            }
+        }
+    }
+}

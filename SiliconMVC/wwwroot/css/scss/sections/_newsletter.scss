@@ -1,0 +1,106 @@
+section.newsletter {
+    background-color: $gray-100;
+
+    .container {
+        max-width: 100%;
+
+        @include lg {
+            max-width: 65dvw;
+        }
+
+        .heading {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+
+            @include lg { justify-content: flex-start; }
+
+            img { margin-top: 1rem; }
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .selections {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                @include lg {
+                    flex-direction: row;
+                }
+
+                h3 { 
+                    flex-basis: auto; 
+                
+                    @include lg { flex-basis: 10rem; }
+                }
+
+                .checkboxgrid {
+                    display: grid;
+                    gap: 1rem 3rem;
+                    grid-template-columns: 1fr 1fr;
+
+                    @include md {
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+
+                    @include lg {
+                        gap: 1rem;
+                    }
+
+                    .griditem input {
+                        all: revert;
+                        border: $gray-500;
+                    }
+                }
+            }
+
+            .submitbox {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                @include lg {
+                    flex-direction: row;
+                }
+
+                label {
+                    display: flex;
+                    align-items: center;
+                    flex-grow: 1;
+                    gap: .5rem;
+                    padding: 0 .5rem;
+                    border: 1px solid $gray-500;
+                    border-radius: 8px;
+                    background-color: $white;
+
+                    i { color: $gray-500; }
+
+                    &:focus-within {
+                        border-color: $theme;
+
+                        i { display: none; }
+                    }
+
+                    #email { 
+                        height: 2rem;
+                        color: $gray-500;
+                        
+    
+                        &:focus {
+                            color: $gray-700;
+                        
+                            &::placeholder { color: $white; }
+                        }
+                    }
+                }
+
+                
+            }
+        }
+    }
+}

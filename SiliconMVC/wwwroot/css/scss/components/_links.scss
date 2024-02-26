@@ -1,0 +1,27 @@
+a {
+    @include standard-text;
+    color: $theme;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.menu-link {
+    @include text-nav;
+    @include transition;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus,
+    .active {
+        color: $theme;
+        text-decoration: none;
+    }
+}
