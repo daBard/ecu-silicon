@@ -1,5 +1,7 @@
-﻿<section class="create-account-form w-full d-flex center">
+﻿@model SignUpViewModel
+
+<section class="create-account-form w-full d-flex center">
     <div class="container d-flex column">
-        <partial name="~/Views/Shared/Forms/_UserCreateAccountForm.cshtml" />
+        <partial name="~/Views/Shared/Forms/_UserCreateAccountForm.cshtml" model="Model" />
     </div>
 </section>

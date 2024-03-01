@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SiliconMVC.ViewModels;
 
 namespace SiliconMVC.Controllers
 {
@@ -11,10 +12,19 @@ namespace SiliconMVC.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Signup()
         {
+            var viewModel = new SignUpViewModel();
+
             ViewData["Title"] = "New Account";
 
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult PostForm(SignUpViewModel model)
+        {
             return View();
         }
     }

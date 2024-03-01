@@ -1,10 +1,12 @@
-﻿<form action="" id="create-account-form">
+﻿@model SignUpViewModel
+
+<form method="post" id="create-account-form" asp-controller="User" asp-action="PostForm">
     <fieldset>
         <legend><h1>Create account</h1></legend>
         <p class="text-m">Already have an account? <a href="">Sign in here.</a></p>
         <div class="box">
             <label for="firstname">
-                <p class="form-label">First name</p>
+                <p class="form-label">@Model.SignUp.FirstName</p>
                 <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
             </label>
 
