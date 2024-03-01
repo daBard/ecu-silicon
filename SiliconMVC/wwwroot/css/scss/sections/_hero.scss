@@ -1,6 +1,7 @@
 section.hero
 {
     width: 100%;
+    background-color: var(--white);
     position: relative;
 
     @include xxl {

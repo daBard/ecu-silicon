@@ -5,13 +5,15 @@ html, body {
     font-size: 16px;
     margin: 0px;
     min-width: 420px;
+    background-color: var(--white);
 }
 
 header, footer, section .container {
-    margin: 0 1rem;
+    padding: 0 1rem;
 }
 
 section {
+    background-color: var(--white);
     padding: 5rem 0 7rem 0;
 }
 
@@ -36,6 +38,12 @@ h4, .h4 { @include h4; }
 h5, .h5 { @include h5; }
 h6, .h6 { @include h6; }
 
+.form-label { 
+    @include text-m; 
+    font-weight: bold;
+    color: var(--gray-900);
+}
+
 .wrapper {
     min-height: 100dvh;
     display: grid;
@@ -46,7 +54,7 @@ h6, .h6 { @include h6; }
     width: 100dvw;
 
     @include lg {
-
+        width: 100dvw;
     }
 }
 

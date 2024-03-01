@@ -1,8 +1,8 @@
 ﻿<header class="w-full d-flex center">
     <div class="container w-max">
-        <div id="logo">
-            <img src="./img/silicon-logo.svg" alt="Silicon Logo">
-        </div>
+        <a id="logo" asp-controller="Home" asp-action="Index">
+            <img src="~/img/silicon-logo.svg" alt="Silicon Logo">
+        </a>
         <div id="menu">
             <nav>
                 <a class="menu-link">Overview</a>
@@ -13,17 +13,17 @@
             <div class="btn-switch">
                 <div class="">Light</div>
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" name="lightdarkcheckbox">
                     <span class="slider round"></span>
                 </label>
                 <div class="">Dark</div>
             </div>
             <div class="account-buttons">
-                <a class="btn-gray">
+                <a class="btn-gray" asp-controller="User" asp-action="Signin">
                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                     <span>Sign in</span>
                 </a>
-                <a class="btn-theme">
+                <a class="btn-theme" asp-controller="User" asp-action="Signup">
                     <i class="fa-regular fa-user"></i>
                     <span>Sign up</span>
                 </a>

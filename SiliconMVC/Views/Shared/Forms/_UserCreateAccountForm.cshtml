@@ -1,0 +1,38 @@
+﻿<form action="" id="create-account-form">
+    <fieldset>
+        <legend><h1>Create account</h1></legend>
+        <p class="text-m">Already have an account? <a href="">Sign in here.</a></p>
+        <div class="box">
+            <label for="firstname">
+                <p class="form-label">First name</p>
+                <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+            </label>
+
+            <label for="lastname">
+                <p class="form-label">Last name</p>
+                <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+            </label>
+        </div>
+
+        <label for="email">
+            <p class="form-label">Email</p>
+            <input type="email" id="email" name="email" placeholder="Enter your email adress" required>
+        </label>
+
+        <label for="password">
+            <p class="form-label">Password</p>
+            <input type="password" id="password" name="password" placeholder="********" required>
+        </label>
+
+        <label for="confirm-password">
+            <p class="form-label">Confirm password</p>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="********" required>
+        </label>
+
+        <div class="terms-box">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label class="text-m" for="terms">I agree to the <a href="">Terms</a> & <a href="">Conditions.</a></label>
+        </div>
+        <button type="submit" form="create-account-form" value="Sign up" class="btn-theme">Sign up</button>
+    </fieldset>
+</form>

@@ -1,5 +1,5 @@
 section.whatuget {
-    background-color: $gray-100;
+    background-color: var(--gray-100);
 
     .grid {
         display: grid;
@@ -18,11 +18,11 @@ section.whatuget {
         a {
             @include transition;
             padding: 2rem;
-            background-color: $gray-100;
+            background-color: var(--gray-100);
 
             &:hover {
                 @include shadow-s;
-                background-color: $white;
+                background-color: var(--white);
                 border-radius: 8px;
                 text-decoration: none;
             }
@@ -43,27 +43,27 @@ section.whatuget {
 
     @media(max-width: 768px) {
         a:not(:last-of-type) {
-            border-bottom: 1px solid $gray-400;
+            border-bottom: 1px solid var(--gray-400);
         }
     }
 
     @media(min-width: 768px) and (max-width: 992px) {
         a:nth-child(odd) {
-            border-right: 1px solid $gray-400;
+            border-right: 1px solid var(--gray-400);
         }
 
         a:nth-child(-n+4) {
-            border-bottom: 1px solid $gray-400;
+            border-bottom: 1px solid var(--gray-400);
         }
     }
 
     @media(min-width: 992px) {     
         a:not(:nth-child(3n+3)) {
-            border-right: 1px solid $gray-400;
+            border-right: 1px solid var(--gray-400);
         }
 
         a:nth-child(-n+3) {
-            border-bottom: 1px solid $gray-400;
+            border-bottom: 1px solid var(--gray-400);
         }
     }
 }

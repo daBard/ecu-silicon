@@ -1,0 +1,31 @@
+﻿html[data-theme="light"] {
+    --white: #FFFFFF;
+    --gray-100: #F3F6FF;
+    --gray-200: #EFF2FC;
+    --gray-300: #E2E5F1;
+    --gray-400: #D4D7E5;
+    --gray-500: #B4B7C9;
+    --gray-600: #9397AD;
+    --gray-700: #565973;
+    --gray-800: #33354D;
+    --gray-900: #0B0F19;
+    --black: #000000;
+
+    --logo-img: url("/img/silicon-logo-light.svg");
+}
+
+html[data-theme="dark"] {
+    --white: #000000;
+    --gray-100: #0B0F19;
+    --gray-200: #33354D;
+    --gray-300: #565973;
+    --gray-400: #9397AD;
+    --gray-500: #B4B7C9;
+    --gray-600: #D4D7E5;
+    --gray-700: #E2E5F1;
+    --gray-800: #EFF2FC;
+    --gray-900: #F3F6FF;
+    --black: #FFFFFF;
+
+    --logo-img: url("/img/silicon-logo-dark.svg");
+}

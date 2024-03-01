@@ -1,26 +1,58 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+html[data-theme=light] {
+  --white: #FFFFFF;
+  --gray-100: #F3F6FF;
+  --gray-200: #EFF2FC;
+  --gray-300: #E2E5F1;
+  --gray-400: #D4D7E5;
+  --gray-500: #B4B7C9;
+  --gray-600: #9397AD;
+  --gray-700: #565973;
+  --gray-800: #33354D;
+  --gray-900: #0B0F19;
+  --black: #000000;
+  --logo-img: url("/img/silicon-logo-light.svg");
+}
+
+html[data-theme=dark] {
+  --white: #000000;
+  --gray-100: #0B0F19;
+  --gray-200: #33354D;
+  --gray-300: #565973;
+  --gray-400: #9397AD;
+  --gray-500: #B4B7C9;
+  --gray-600: #D4D7E5;
+  --gray-700: #E2E5F1;
+  --gray-800: #EFF2FC;
+  --gray-900: #F3F6FF;
+  --black: #FFFFFF;
+  --logo-img: url("/img/silicon-logo-dark.svg");
+}
+
 html, body {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 16px;
   margin: 0px;
   min-width: 420px;
+  background-color: var(--white);
 }
 
 header, footer, section .container {
-  margin: 0 1rem;
+  padding: 0 1rem;
 }
 
 section {
+  background-color: var(--white);
   padding: 5rem 0 7rem 0;
 }
 
 .text-xs {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 12px !important;
 }
@@ -28,7 +60,7 @@ section {
 .text-s {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 14px !important;
 }
@@ -36,7 +68,7 @@ section {
 .text-m {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 16px !important;
 }
@@ -44,7 +76,7 @@ section {
 .text-lg {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 18px !important;
 }
@@ -52,7 +84,7 @@ section {
 .text-xl {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 20px !important;
 }
@@ -60,7 +92,7 @@ section {
 .text-lead {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 24px !important;
 }
@@ -68,10 +100,10 @@ section {
 .d1 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 80px !important;
 }
@@ -79,10 +111,10 @@ section {
 .d2 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 72px !important;
 }
@@ -90,10 +122,10 @@ section {
 .d3 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 64px !important;
 }
@@ -101,10 +133,10 @@ section {
 .d4 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 56px !important;
 }
@@ -112,10 +144,10 @@ section {
 .d5 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 48px !important;
 }
@@ -123,10 +155,10 @@ section {
 .d6 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 42px !important;
 }
@@ -134,10 +166,10 @@ section {
 h1, .h1 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 40px !important;
 }
@@ -145,10 +177,10 @@ h1, .h1 {
 h2, .h2 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 32px !important;
 }
@@ -156,10 +188,10 @@ h2, .h2 {
 h3, .h3 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 28px !important;
 }
@@ -167,10 +199,10 @@ h3, .h3 {
 h4, .h4 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 24px !important;
 }
@@ -178,10 +210,10 @@ h4, .h4 {
 h5, .h5 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 20px !important;
 }
@@ -189,12 +221,22 @@ h5, .h5 {
 h6, .h6 {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 16px !important;
+}
+
+.form-label {
+  line-height: 160%;
+  font-weight: 400;
+  color: var(--gray-700);
+  font-family: "Manrope", sans-serif;
+  font-size: 16px !important;
+  font-weight: bold;
+  color: var(--gray-900);
 }
 
 .wrapper {
@@ -206,6 +248,12 @@ h6, .h6 {
 .w-full {
   width: 100dvw;
 }
+@media (min-width: 992px) {
+  .w-full {
+    width: 100dvw;
+  }
+}
+
 .w-max {
   width: 100%;
 }
@@ -235,10 +283,14 @@ h6, .h6 {
   align-items: center;
 }
 
+.d-none {
+  display: none;
+}
+
 a {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   color: #6366F1;
   text-decoration: none;
@@ -251,15 +303,13 @@ a:hover {
 .menu-link {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 16px;
-  color: #33354D;
+  color: var(--gray-800);
   font-weight: 600 !important;
-  transition: all 0.3s ease-in-out;
   text-decoration: none;
-  display: flex;
-  align-items: center;
+  transition: color 0.25s ease-in-out;
   cursor: pointer;
 }
 .menu-link:hover, .menu-link:active, .menu-link:focus,
@@ -342,10 +392,10 @@ a:hover {
 .btn-switch label {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 16px;
-  color: #33354D;
+  color: var(--gray-800);
   font-weight: 600 !important;
 }
 .btn-switch .switch {
@@ -399,7 +449,7 @@ a:hover {
 .btn-social {
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 20px !important;
   display: flex;
@@ -417,8 +467,50 @@ a:hover {
   color: #FFFFFF;
 }
 
+form .box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 992px) {
+  form .box {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+form label {
+  display: flex;
+  flex-direction: column;
+}
+form input {
+  all: revert;
+}
+form input[type=text], form input[type=email], form input[type=tel], form input[type=password] {
+  border: 1px solid var(--gray-500);
+  border-radius: 8px;
+  height: 2rem;
+  background-color: var(--white);
+  color: var(--gray-500);
+  padding-left: 0.5rem;
+}
+form input[type=text]:active::placeholder, form input[type=text]:focus-visible::placeholder, form input[type=text]:focus-within::placeholder, form input[type=text]:focus::placeholder, form input[type=email]:active::placeholder, form input[type=email]:focus-visible::placeholder, form input[type=email]:focus-within::placeholder, form input[type=email]:focus::placeholder, form input[type=tel]:active::placeholder, form input[type=tel]:focus-visible::placeholder, form input[type=tel]:focus-within::placeholder, form input[type=tel]:focus::placeholder, form input[type=password]:active::placeholder, form input[type=password]:focus-visible::placeholder, form input[type=password]:focus-within::placeholder, form input[type=password]:focus::placeholder {
+  color: var(--white);
+}
+form textarea {
+  all: revert;
+  border: 1px solid var(--gray-500);
+  border-radius: 8px;
+  color: var(--gray-500);
+  padding-left: 0.5rem;
+}
+
 header {
-  padding: 15px 0;
+  padding: 1rem;
+  background-color: var(--white);
+}
+header .header-avatar img {
+  max-height: 2.75rem;
+  max-width: 2.75rem;
+  border-radius: 50%;
 }
 header .container {
   display: grid;
@@ -436,6 +528,9 @@ header .container {
 }
 header .container #logo {
   grid-area: logo;
+}
+header .container #logo img {
+  content: var(--logo-img);
 }
 header .container #menu {
   width: 100%;
@@ -469,6 +564,17 @@ header .container #menu nav {
   grid-area: navigation;
   display: flex;
   gap: 15px;
+  /*  a.nav-link {
+      @include text-nav;
+      @include transition;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &:hover{
+          text-decoration: none;
+          color: $theme;
+      }
+  }*/
 }
 header .container #menu .btn-switch {
   grid-area: switch;
@@ -494,10 +600,10 @@ header .container .btn-mobile {
   display: block;
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  color: #0B0F19;
+  color: var(--gray-900);
   text-transform: capitalize;
   font-size: 32px !important;
 }
@@ -513,10 +619,11 @@ footer {
   justify-content: center;
   line-height: 160%;
   font-weight: 400;
-  color: #565973;
+  color: var(--gray-700);
   font-family: "Manrope", sans-serif;
   font-size: 14px !important;
-  color: #9397AD;
+  color: var(--gray-600);
+  background-color: var(--white);
 }
 footer .container {
   text-align: center;
@@ -549,6 +656,7 @@ footer .container .copyright {
 
 section.hero {
   width: 100%;
+  background-color: var(--white);
   position: relative;
 }
 section.hero div .content {
@@ -612,7 +720,7 @@ section.hero .hero-img {
 }
 
 section.whatuget {
-  background-color: #F3F6FF;
+  background-color: var(--gray-100);
 }
 section.whatuget .grid {
   display: grid;
@@ -631,11 +739,11 @@ section.whatuget .grid {
 section.whatuget .grid a {
   transition: all 0.3s ease-in-out;
   padding: 2rem;
-  background-color: #F3F6FF;
+  background-color: var(--gray-100);
 }
 section.whatuget .grid a:hover {
   box-shadow: 0px 2px 6.4px -1px rgba(19, 16, 34, 0.03), 0px 4.4px 12px -1px rgba(19, 16, 34, 0.06);
-  background-color: #FFFFFF;
+  background-color: var(--white);
   border-radius: 8px;
   text-decoration: none;
 }
@@ -646,24 +754,29 @@ section.whatuget .grid a:hover {
 }
 @media (max-width: 768px) {
   section.whatuget a:not(:last-of-type) {
-    border-bottom: 1px solid #D4D7E5;
+    border-bottom: 1px solid var(--gray-400);
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   section.whatuget a:nth-child(odd) {
-    border-right: 1px solid #D4D7E5;
+    border-right: 1px solid var(--gray-400);
   }
   section.whatuget a:nth-child(-n+4) {
-    border-bottom: 1px solid #D4D7E5;
+    border-bottom: 1px solid var(--gray-400);
   }
 }
 @media (min-width: 992px) {
   section.whatuget a:not(:nth-child(3n+3)) {
-    border-right: 1px solid #D4D7E5;
+    border-right: 1px solid var(--gray-400);
   }
   section.whatuget a:nth-child(-n+3) {
-    border-bottom: 1px solid #D4D7E5;
+    border-bottom: 1px solid var(--gray-400);
   }
+}
+
+section.lightdarkswitch .container {
+  background-color: #FFFFFF;
+  padding: 0;
 }
 
 section.manageyourwork .container {
@@ -705,7 +818,7 @@ section.manageyourwork .container .content ul li::before {
 }
 
 section.downloadourapp {
-  background-color: #F3F6FF;
+  background-color: var(--gray-100);
 }
 section.downloadourapp .container {
   flex-direction: column-reverse;
@@ -774,7 +887,7 @@ section.integratetoptools .grid .grid-item p {
 }
 
 section.newsletter {
-  background-color: #F3F6FF;
+  background-color: var(--gray-100);
 }
 section.newsletter .container {
   max-width: 100%;
@@ -835,9 +948,8 @@ section.newsletter .container form .selections .checkboxgrid {
     gap: 1rem;
   }
 }
-section.newsletter .container form .selections .checkboxgrid .griditem input {
-  all: revert;
-  border: #B4B7C9;
+section.newsletter .container form .selections .checkboxgrid .griditem {
+  display: flex;
 }
 section.newsletter .container form .submitbox {
   display: flex;
@@ -851,16 +963,18 @@ section.newsletter .container form .submitbox {
 }
 section.newsletter .container form .submitbox label {
   display: flex;
+  flex-direction: row;
   align-items: center;
   flex-grow: 1;
   gap: 0.5rem;
+  height: 2rem;
   padding: 0 0.5rem;
-  border: 1px solid #B4B7C9;
+  border: 1px solid var(--gray-500);
   border-radius: 8px;
-  background-color: #FFFFFF;
+  background-color: var(--white);
 }
 section.newsletter .container form .submitbox label i {
-  color: #B4B7C9;
+  color: var(--gray-500);
 }
 section.newsletter .container form .submitbox label:focus-within {
   border-color: #6366F1;
@@ -869,12 +983,356 @@ section.newsletter .container form .submitbox label:focus-within i {
   display: none;
 }
 section.newsletter .container form .submitbox label #email {
+  height: auto;
+  color: var(--gray-500);
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+section.newsletter .container form .submitbox label #email:focus, section.newsletter .container form .submitbox label #email:focus-visible {
+  color: var(--gray-700);
+  outline: none;
+}
+section.newsletter .container form .submitbox label #email:focus::placeholder, section.newsletter .container form .submitbox label #email:focus-visible::placeholder {
+  color: var(--white);
+}
+
+section.user-login .container {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  section.user-login .container {
+    width: 33dvw;
+  }
+}
+section.user-login .container #login-form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+section.user-login .container #login-form fieldset label {
+  width: 100%;
+}
+section.user-login .container #login-form fieldset label input [type=email], section.user-login .container #login-form fieldset label input[type=password] {
+  padding-left: 0.5rem;
+}
+section.user-login .container #login-form fieldset button {
+  width: 100%;
+}
+section.user-login .container #login-form fieldset .remember-box {
+  display: flex;
+  gap: 0.5rem;
+}
+section.user-login .container a {
+  margin-top: 1rem;
+  align-self: center;
+}
+
+section.create-account-form .container {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  section.create-account-form .container {
+    width: 33dvw;
+  }
+}
+section.create-account-form .container #create-account-form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+section.create-account-form .container #create-account-form fieldset button {
+  width: 100%;
+}
+section.create-account-form .container #create-account-form fieldset .name-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+section.create-account-form .container #create-account-form fieldset .name-box label {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  section.create-account-form .container #create-account-form fieldset .name-box {
+    flex-direction: row;
+  }
+}
+section.create-account-form .container #create-account-form fieldset .terms-box {
+  display: flex;
+  gap: 0.5rem;
+}
+section.create-account-form .container #create-account-form fieldset .terms-box label {
+  display: inline;
+}
+section.create-account-form .container a {
+  margin-top: 1rem;
+  align-self: center;
+}
+
+section.account-details .container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: "side" "details";
+}
+@media (min-width: 1200px) {
+  section.account-details .container {
+    gap: 5rem;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: "side details";
+  }
+}
+section.account-details .container .side {
+  grid-area: side;
+  display: grid;
+  grid-template-columns: auto 2rem auto;
+  grid-template-areas: "avatar . shortinfo" "avatar . buttons";
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+@media (min-width: 1200px) {
+  section.account-details .container .side {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--gray-300);
+  }
+}
+section.account-details .container .side .avatar-box {
+  grid-area: avatar;
+  position: relative;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+section.account-details .container .side .avatar-box .change-avatar {
+  position: absolute;
+  bottom: 0rem;
+  right: 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 2rem;
-  color: #B4B7C9;
+  width: 2rem;
+  background-color: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: 15px;
+  cursor: pointer;
 }
-section.newsletter .container form .submitbox label #email:focus {
-  color: #565973;
+section.account-details .container .side .short-info-box {
+  grid-area: shortinfo;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-section.newsletter .container form .submitbox label #email:focus::placeholder {
-  color: #FFFFFF;
+section.account-details .container .side .buttons-box {
+  grid-area: buttons;
+}
+section.account-details .container .side .buttons-box button {
+  width: 100%;
+}
+section.account-details .container .side .buttons-box .btn-white {
+  width: fit-content;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+section.account-details .container .details {
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+section.account-details .container .details #basic-info {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-500);
+}
+section.account-details .container .details form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+section.account-details .container .details .buttons-box {
+  display: flex;
+  gap: 1rem;
+}
+
+section.breadcrumbs .container {
+  color: var(--gray-500);
+  align-items: center;
+  gap: 1rem;
+}
+section.breadcrumbs .container a {
+  color: var(--gray-500);
+}
+section.breadcrumbs .container a.active {
+  color: #6366F1;
+}
+
+section.courses .container {
+  gap: 3rem;
+}
+section.courses .heading-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.courses .heading-box .input-box {
+  display: flex;
+  gap: 1rem;
+}
+section.courses .heading-box .input-box #categories input[list=browsers] {
+  border: 1px solid var(--gray-500);
+  border-radius: 8px;
+  height: 2rem;
+  color: var(--gray-500);
+  padding-left: 0.5rem;
+}
+section.courses .heading-box .input-box #search {
+  position: relative;
+}
+section.courses .heading-box .input-box #search i {
+  position: absolute;
+  right: 0.5rem;
+  top: 30%;
+  color: var(--gray-800);
+}
+section.courses .grid-box {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  section.courses .grid-box {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  section.courses .grid-box {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+section.courses .grid-box .grid-item {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 6.4px -1px rgba(19, 16, 34, 0.03), 0px 4.4px 12px -1px rgba(19, 16, 34, 0.06);
+  position: relative;
+  border-radius: 8px;
+  padding-bottom: 1rem;
+}
+section.courses .grid-box .grid-item:hover {
+  box-shadow: 0px 4px 13px -2px rgba(19, 16, 34, 0.06), 0px 4.8px 24.4px -6px rgba(19, 16, 34, 0.1);
+  scale: 1.05;
+}
+section.courses .grid-box .grid-item .content {
+  text-decoration: none;
+}
+section.courses .grid-box .grid-item .content img {
+  border-radius: 8px 8px 0 0;
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+section.courses .grid-box .grid-item .content .text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+section.courses .grid-box .grid-item .content .text-box .price {
+  font-weight: bold;
+}
+section.courses .grid-box .grid-item .content .text-box .price.sale {
+  color: #EF4444;
+}
+section.courses .grid-box .grid-item .content .text-box .price.sale::after {
+  padding-left: 0.5rem;
+  font-weight: 400;
+  color: var(--gray-600);
+  content: "$1.50";
+}
+section.courses .grid-box .grid-item .content .info-box {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-300);
+}
+section.courses .grid-box .grid-item .content .info-box .hours, section.courses .grid-box .grid-item .content .info-box .rating {
+  color: var(--gray-600);
+}
+section.courses .grid-box .grid-item .tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: var(--white);
+  background-color: #22C55E;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+}
+section.courses .grid-box .grid-item .bookmark {
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--white);
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.courses .grid-box .grid-item .bookmark i {
+  display: block;
+  color: var(--gray-800);
+  font-size: 18px;
+}
+section.courses .grid-box .grid-item .bookmark:hover {
+  background-color: #6366F1;
+}
+section.courses .grid-box .grid-item .bookmark:hover i {
+  color: var(--white);
+}
+
+section.workwithus {
+  background-color: var(--gray-100);
+}
+@media (min-width: 992px) {
+  section.workwithus {
+    background-color: var(--white);
+  }
+}
+section.workwithus .container {
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: var(--gray-100);
+  padding: 3rem 1rem;
+  gap: 1rem;
+}
+@media (min-width: 992px) {
+  section.workwithus .container {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 4rem;
+  }
+}
+section.workwithus .container .text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+section.workwithus .container .text span {
+  color: #6366F1;
+}
+@media (min-width: 1200px) {
+  section.workwithus .container .text {
+    padding: 5rem;
+  }
 }

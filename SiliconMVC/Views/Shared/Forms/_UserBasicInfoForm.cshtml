@@ -1,0 +1,34 @@
+﻿<form action="" id="basic-info">
+    <fieldset>
+        <legend><h5>Basic info</h2></legend>
+        <div class="box">
+            <label for="firstname">
+                <p class="form-label">First name</p>
+                <input type="text" id="firstname" name="firstname" placeholder="John" required>
+            </label>
+
+            <label for="lastname">
+                <p class="form-label">Last name</p>
+                <input type="text" id="lastname" name="lastname" placeholder="Doe" required>
+            </label>
+            <label for="email">
+                <p class="form-label">Email address</p>
+                <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+            </label>
+            <label for="tel">
+                <p class="form-label">Phone</p>
+                <input type="tel" id="tel" name="tel" placeholder="Enter your phone">
+            </label>
+        </div>
+
+        <label for="bio">
+            <p class="form-label">Bio <span>(optional)</span></p>
+            <textarea id="bio" name="bio" placeholder="Add a short bio..." rows="4"></textarea>
+        </label>
+
+        <div class="buttons-box">
+            <button class="btn btn-gray">Cancel</button>
+            <button type="submit" class="btn-theme">Save changes</button>
+        </div>
+    </fieldset>
+</form>

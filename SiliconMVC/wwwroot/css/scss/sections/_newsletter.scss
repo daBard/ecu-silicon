@@ -1,5 +1,5 @@
 section.newsletter {
-    background-color: $gray-100;
+    background-color: var(--gray-100);
 
     .container {
         max-width: 100%;
@@ -52,9 +52,8 @@ section.newsletter {
                         gap: 1rem;
                     }
 
-                    .griditem input {
-                        all: revert;
-                        border: $gray-500;
+                    .griditem {
+                        display: flex;
                     }
                 }
             }
@@ -70,15 +69,17 @@ section.newsletter {
 
                 label {
                     display: flex;
+                    flex-direction: row;
                     align-items: center;
                     flex-grow: 1;
                     gap: .5rem;
+                    height: 2rem;
                     padding: 0 .5rem;
-                    border: 1px solid $gray-500;
+                    border: 1px solid var(--gray-500);
                     border-radius: 8px;
-                    background-color: $white;
+                    background-color: var(--white);
 
-                    i { color: $gray-500; }
+                    i { color: var(--gray-500); }
 
                     &:focus-within {
                         border-color: $theme;
@@ -87,14 +88,17 @@ section.newsletter {
                     }
 
                     #email { 
-                        height: 2rem;
-                        color: $gray-500;
+                        height: auto;
+                        color: var(--gray-500);
+                        width: 100%;
+                        border: none;
+                        padding: 0;
                         
     
-                        &:focus {
-                            color: $gray-700;
-                        
-                            &::placeholder { color: $white; }
+                        &:focus, &:focus-visible {
+                            color: var(--gray-700);
+                            outline: none;
+                            &::placeholder { color: var(--white); }
                         }
                     }
                 }

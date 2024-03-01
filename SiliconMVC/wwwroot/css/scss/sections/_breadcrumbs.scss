@@ -1,0 +1,13 @@
+section.breadcrumbs .container {
+    color: var(--gray-500);
+    align-items: center;
+    gap: 1rem;
+
+    a {
+        color: var(--gray-500);
+
+        &.active {
+            color: $theme;
+        }
+    }
+}

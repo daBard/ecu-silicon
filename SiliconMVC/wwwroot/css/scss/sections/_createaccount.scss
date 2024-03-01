@@ -1,0 +1,52 @@
+section.create-account-form {
+    .container {
+        width: 100%;
+
+        @include lg {
+            width: 33dvw;
+        }
+
+        #create-account-form fieldset {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            input[type=text], input[type=password] {
+               
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .name-box {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                justify-content: space-between;
+
+                label {
+                    width: 100%;
+                }
+
+                @include lg {
+                    flex-direction: row;
+                }
+            }
+
+            .terms-box {
+                display: flex;
+                gap: .5rem;
+
+                label {
+                    display: inline;
+                }
+            }
+        }
+
+        a {
+            margin-top: 1rem;
+            align-self: center;
+        }
+    }
+}

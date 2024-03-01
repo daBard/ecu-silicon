@@ -11,10 +11,8 @@ a {
 
 .menu-link {
     @include text-nav;
-    @include transition;
     text-decoration: none;
-    display: flex;
-    align-items: center;
+    transition: color 0.25s ease-in-out;
     cursor: pointer;
 
     &:hover,

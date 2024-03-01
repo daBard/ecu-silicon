@@ -3,7 +3,8 @@ footer {
     display: flex;
     justify-content: center;
     @include text-s;
-    color: $gray-600;
+    color: var(--gray-600);
+    background-color: var(--white);
 
     .container {
         text-align: center;

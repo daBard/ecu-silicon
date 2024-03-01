@@ -1,0 +1,138 @@
+section.courses {
+    .container {
+        gap: 3rem;
+    }
+
+    .heading-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .input-box {
+            display: flex;
+            gap: 1rem;
+
+            #categories input[list="browsers"] { @include input; }
+
+            #search {
+                position: relative;
+
+                i {
+                    position: absolute;
+                    right: .5rem;
+                    top: 30%;
+                    color: var(--gray-800);
+                }
+            }
+        }
+    }
+
+    .grid-box {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+
+        @include md {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include lg {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .grid-item {
+            @include transition;
+            @include shadow-s;
+            position: relative;
+            border-radius: 8px;
+            padding-bottom: 1rem;
+
+            &:hover { 
+                @include shadow-l;
+                scale: 1.05;
+            }
+
+            .content {
+                text-decoration: none;
+
+                img {
+                    border-radius: 8px 8px 0 0;
+                    max-height: 300px;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                .text-box {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    padding: 0 1rem;
+
+                    .price { font-weight: bold; }
+
+                    .price.sale {
+                        color: $danger;
+
+                        &::after {
+                            padding-left: .5rem;
+                            font-weight: 400;
+                            color: var(--gray-600);
+                            content: "$1.50";
+                        }
+                    }
+                }
+
+                .info-box {
+                    display: flex;
+                    gap: 1rem;
+                    padding-top: 1rem;
+                    border-top: 1px solid var(--gray-300);
+
+                    .hours, .rating {
+                        color: var(--gray-600);
+                    }
+                    
+                }
+            }
+
+            
+
+            .tag {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                color: var(--white);
+                background-color: $success;
+                padding: .25rem .5rem;
+                border-radius: 8px;
+            }
+
+            .bookmark {
+                @include transition;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background-color: var(--white);
+                height: 2.25rem;
+                width: 2.25rem;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                i {
+                    display: block;
+                    color: var(--gray-800);
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    background-color: $theme;
+                    i { color: var(--white); }
+                }
+            }
+
+            
+        }
+    }
+}

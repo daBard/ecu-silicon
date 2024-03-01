@@ -16,18 +16,40 @@
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
+    <None Include="wwwroot\css\scss\components\_buttons.scss" />
+    <None Include="wwwroot\css\scss\components\_links.scss" />
+    <None Include="wwwroot\css\scss\core\_base.scss" />
+    <None Include="wwwroot\css\scss\core\_colors.scss" />
+    <None Include="wwwroot\css\scss\core\_media.scss" />
+    <None Include="wwwroot\css\scss\core\_typography.scss" />
+    <None Include="wwwroot\css\scss\sections\_downloadourapp.scss" />
+    <None Include="wwwroot\css\scss\sections\_footer.scss" />
+    <None Include="wwwroot\css\scss\sections\_header.scss" />
+    <None Include="wwwroot\css\scss\sections\_hero.scss" />
+    <None Include="wwwroot\css\scss\sections\_integratetoptools.scss" />
+    <None Include="wwwroot\css\scss\sections\_manageyourwork.scss" />
+    <None Include="wwwroot\css\scss\sections\_newsletter.scss" />
+    <None Include="wwwroot\css\scss\sections\_whatuget.scss" />
+    <None Include="wwwroot\css\scss\_components.scss" />
+    <None Include="wwwroot\css\scss\_core.scss" />
+    <None Include="wwwroot\css\scss\_sections.scss" />
     <None Include="wwwroot\img\appstore.svg" />
     <None Include="wwwroot\img\arrows.svg" />
     <None Include="wwwroot\img\googleplay.svg" />
     <None Include="wwwroot\img\icons\brand1.svg" />
     <None Include="wwwroot\img\icons\bx-check-circle.svg" />
     <None Include="wwwroot\img\icons\comment_on_tasks.svg" />
+    <None Include="wwwroot\img\icons\data_security.svg" />
     <None Include="wwwroot\img\icons\Dropbox.svg" />
     <None Include="wwwroot\img\icons\Evernote.svg" />
     <None Include="wwwroot\img\icons\Gmail.svg" />
     <None Include="wwwroot\img\icons\Google.svg" />
     <None Include="wwwroot\img\icons\Mailchimp.svg" />
+    <None Include="wwwroot\img\icons\multiple_assignees.svg" />
+    <None Include="wwwroot\img\icons\notifications.svg" />
+    <None Include="wwwroot\img\icons\sections_subtasks.svg" />
     <None Include="wwwroot\img\icons\star.svg" />
+    <None Include="wwwroot\img\icons\task_analytics.svg" />
     <None Include="wwwroot\img\icons\Trello.svg" />
     <None Include="wwwroot\img\icons\Zoom.svg" />
     <None Include="wwwroot\img\logoipsum1.svg" />
@@ -35,7 +57,7 @@
     <None Include="wwwroot\img\logoipsum3.svg" />
     <None Include="wwwroot\img\logoipsum4.svg" />
     <None Include="wwwroot\img\silicon-logo-icon.svg" />
-    <None Include="wwwroot\img\silicon-logo.svg" />
+    <None Include="wwwroot\img\silicon-logo-light.svg" />
   </ItemGroup>
 
 </Project>

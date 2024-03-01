@@ -1,0 +1,36 @@
+section.user-login {
+    .container {
+        width: 100%;
+
+        @include lg {
+            width: 33dvw;
+        }
+
+        #login-form fieldset {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            label {
+                width: 100%;
+                input [type=email], input[type=password] {
+                    padding-left: .5rem; 
+                }
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .remember-box {
+                display: flex;
+                gap: .5rem;
+            }
+        }
+
+        a {
+            margin-top: 1rem;
+            align-self: center;
+        }
+    }
+}

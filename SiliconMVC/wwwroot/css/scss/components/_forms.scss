@@ -1,0 +1,49 @@
+form {
+    .box {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        @include lg {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        all: revert;
+
+        &[type=text], &[type=email], &[type=tel], &[type=password] {
+            border: 1px solid var(--gray-500);
+            border-radius: 8px;
+            height: 2rem;
+            background-color: var(--white);
+            color: var(--gray-500);
+            padding-left: .5rem;
+
+            &:active::placeholder, &:focus-visible::placeholder, &:focus-within::placeholder, &:focus::placeholder {
+                color: var(--white);
+            }
+        }
+    }
+
+    textarea {
+        all: revert;
+        border: 1px solid var(--gray-500);
+        border-radius: 8px;
+        color: var(--gray-500);
+        padding-left: .5rem;
+    }
+}
+
+@mixin input {
+        border: 1px solid var(--gray-500);
+        border-radius: 8px;
+        height: 2rem;
+        color: var(--gray-500);
+        padding-left: .5rem;
+}
