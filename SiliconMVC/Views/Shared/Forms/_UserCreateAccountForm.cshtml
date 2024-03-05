@@ -1,40 +1,46 @@
 ﻿@model SignUpViewModel
 
-<form method="post" id="create-account-form" asp-controller="User" asp-action="PostForm">
+<form method="post" id="create-account-form" asp-controller="User" asp-action="SignUp" novalidate>
     <fieldset>
         <legend><h1>Create account</h1></legend>
-        <p class="text-m">Already have an account? <a href="">Sign in here.</a></p>
+        <p class="text-m">Already have an account? <a asp-controller="User" asp-action="SignIn">Sign in here</a>.</p>
         <div class="box">
-            <label for="firstname">
-                <p class="form-label">@Model.SignUp.FirstName</p>
-                <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
-            </label>
+            <div id="signup-firstname" class="input-box">
+                <label asp-for=SignUp.FirstName></label>
+                <span asp-validation-for="SignUp.FirstName"></span>
+                <input asp-for="SignUp.FirstName" />
+            </div>
 
-            <label for="lastname">
-                <p class="form-label">Last name</p>
-                <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
-            </label>
+            <div id="signup-lastname" class="input-box">
+                <label asp-for=SignUp.LastName></label>
+                <span asp-validation-for="SignUp.LastName"></span>
+                <input asp-for="SignUp.LastName" />
+            </div>
         </div>
 
-        <label for="email">
-            <p class="form-label">Email</p>
-            <input type="email" id="email" name="email" placeholder="Enter your email adress" required>
-        </label>
-
-        <label for="password">
-            <p class="form-label">Password</p>
-            <input type="password" id="password" name="password" placeholder="********" required>
-        </label>
-
-        <label for="confirm-password">
-            <p class="form-label">Confirm password</p>
-            <input type="password" id="confirm-password" name="confirm-password" placeholder="********" required>
-        </label>
-
-        <div class="terms-box">
-            <input type="checkbox" id="terms" name="terms" required>
-            <label class="text-m" for="terms">I agree to the <a href="">Terms</a> & <a href="">Conditions.</a></label>
+        <div id="signup-email" class="input-box">
+            <label asp-for=SignUp.Email></label>
+            <span asp-validation-for=SignUp.Email></span>
+            <input asp-for="SignUp.Email" />
         </div>
-        <button type="submit" form="create-account-form" value="Sign up" class="btn-theme">Sign up</button>
+
+        <div id="signup-password" class="input-box">
+            <label asp-for=SignUp.Password></label>
+            <span asp-validation-for="SignUp.Password"></span>
+            <input asp-for="SignUp.Password" />
+        </div>
+
+        <div id="signup-confirmpassword" class="input-box">
+            <label asp-for=SignUp.ConfirmPassword></label>
+            <span asp-validation-for="SignUp.ConfirmPassword"></span>
+            <input asp-for="SignUp.ConfirmPassword" />
+        </div>
+
+        <div id="signup-terms" class="checkbox-box">
+            <input asp-for=SignUp.TermsAndConditions>
+            <label class="text-m" asp-for="SignUp.TermsAndConditions">I agree to the <a asp-controller="User" asp-action="SignUp">Terms</a> & <a asp-controller="User" asp-action="SignUp">Conditions.</a></label>
+            <span asp-validation-for="SignUp.TermsAndConditions"></span>
+        </div>
+        <button type="submit" class="btn-theme">Sign up</button>
     </fieldset>
 </form>

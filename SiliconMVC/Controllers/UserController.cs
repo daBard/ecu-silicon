@@ -5,11 +5,26 @@ namespace SiliconMVC.Controllers
 {
     public class UserController : Controller
     {
+        [HttpGet]
         public IActionResult Signin()
         {
-            ViewData["Title"] = "Login";
+            var viewModel = new SignInViewModel();
 
-            return View();
+            ViewData["Title"] = "Sign In";
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Signin(SignInViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewData["Title"] = "Incorrect entry";
+                return View(viewModel);
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
@@ -23,9 +38,16 @@ namespace SiliconMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostForm(SignUpViewModel model)
+        public IActionResult SignUp(SignUpViewModel viewModel)
         {
-            return View();
+            if(!ModelState.IsValid)
+            {
+                ViewData["Title"] = "Incorrect entry";
+                return View(viewModel);
+            }
+
+            return RedirectToAction("SignIn", "User");
+           
         }
     }
 }

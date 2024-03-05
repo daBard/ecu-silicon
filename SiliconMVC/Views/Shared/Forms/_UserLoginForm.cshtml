@@ -1,21 +1,27 @@
-﻿<form action="" id="login-form">
+﻿@model SignInViewModel
+
+<form method="post" id="login-form" asp-controller="User" asp-action="SignIn" novalidate>
     <fieldset>
         <legend><h1>Welcome back</h1></legend>
-        <p class="text-m">Don’t have an account yet? <a href="">Sign up here.</a></p>
-        <label for="email">
-            <p class="form-label">Email</p>
-            <input type="email" id="email" name="email" placeholder="Enter your email adress" required>
-        </label>
-
-        <label for="password">
-            <p class="form-label">Password</p>
-            <input type="password" id="password" name="password" placeholder="********" required>
-        </label>
-
-        <div class="remember-box">
-            <input type="checkbox" id="remember-me" name="remember-me">
-            <label class="text-m" for="remember-me">Remember me</label>
+        <p class="text-m">Don’t have an account yet? <a asp-controller="User" asp-action="SignUp">Sign up here.</a></p>
+        
+        <div id="signin-email" class="input-box">
+            <label asp-for=SignIn.Email></label>
+            <span asp-validation-for=SignIn.Email></span>
+            <input asp-for="SignIn.Email" />
         </div>
-        <button type="submit" form="login-form" value="Sign in" class="btn-theme">Sign in</button>
+
+        <div id="signin-password" class="input-box">
+            <label asp-for=SignIn.Password></label>
+            <span asp-validation-for="SignIn.Password"></span>
+            <input asp-for="SignIn.Password" />
+        </div>
+
+        <div id="signin-remember" class="checkbox-box">
+            <input asp-for=SignIn.Remember>
+            <label class="text-m" asp-for=SignIn.Remember></label>
+        </div>
+
+        <button type="submit" class="btn-theme">Sign in</button>
     </fieldset>
 </form>

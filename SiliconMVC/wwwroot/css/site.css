@@ -477,9 +477,37 @@ form .box {
     grid-template-columns: 1fr 1fr;
   }
 }
-form label {
-  display: flex;
-  flex-direction: column;
+form .input-box label {
+  color: var(--gray-900);
+  font-weight: bold;
+}
+form .input-box span {
+  line-height: 160%;
+  font-weight: 400;
+  color: var(--gray-700);
+  font-family: "Manrope", sans-serif;
+  font-size: 12px !important;
+  float: right;
+  color: #EF4444;
+}
+form .input-box input {
+  width: 100%;
+  width: -webkit-fill-available;
+}
+form .input-box input.input-validation-error {
+  border-color: #EF4444;
+}
+form .checkbox-box {
+  cursor: pointer;
+}
+form .checkbox-box span {
+  line-height: 160%;
+  font-weight: 400;
+  color: var(--gray-700);
+  font-family: "Manrope", sans-serif;
+  font-size: 12px !important;
+  float: right;
+  color: #EF4444;
 }
 form input {
   all: revert;
