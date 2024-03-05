@@ -8,7 +8,6 @@ public class SignInModel
     [DataType(DataType.EmailAddress)]
     [Display(Name = "Email address", Prompt = "Enter your email address", Order = 0)]
     [Required(ErrorMessage = "Required field")]
-    [RegularExpression("[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+", ErrorMessage = "The email address is not valid")]
     public string Email { get; set; } = null!;
 
     [DataType(DataType.Password)]
