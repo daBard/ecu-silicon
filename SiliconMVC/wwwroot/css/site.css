@@ -511,24 +511,42 @@ form .checkbox-box span {
 }
 form input {
   all: revert;
+  line-height: 160%;
+  font-weight: 400;
+  color: var(--gray-700);
+  font-family: "Manrope", sans-serif;
 }
 form input[type=text], form input[type=email], form input[type=tel], form input[type=password] {
   border: 1px solid var(--gray-500);
   border-radius: 8px;
-  height: 2rem;
   background-color: var(--white);
-  color: var(--gray-500);
-  padding-left: 0.5rem;
+  color: var(--gray-700);
+  padding: 0.5rem;
+}
+form input[type=text]::placeholder, form input[type=email]::placeholder, form input[type=tel]::placeholder, form input[type=password]::placeholder {
+  opacity: 0.4;
 }
 form input[type=text]:active::placeholder, form input[type=text]:focus-visible::placeholder, form input[type=text]:focus-within::placeholder, form input[type=text]:focus::placeholder, form input[type=email]:active::placeholder, form input[type=email]:focus-visible::placeholder, form input[type=email]:focus-within::placeholder, form input[type=email]:focus::placeholder, form input[type=tel]:active::placeholder, form input[type=tel]:focus-visible::placeholder, form input[type=tel]:focus-within::placeholder, form input[type=tel]:focus::placeholder, form input[type=password]:active::placeholder, form input[type=password]:focus-visible::placeholder, form input[type=password]:focus-within::placeholder, form input[type=password]:focus::placeholder {
   color: var(--white);
 }
 form textarea {
   all: revert;
+  line-height: 160%;
+  font-weight: 400;
+  color: var(--gray-700);
+  font-family: "Manrope", sans-serif;
+  width: 100%;
+  width: -webkit-fill-available;
   border: 1px solid var(--gray-500);
   border-radius: 8px;
-  color: var(--gray-500);
-  padding-left: 0.5rem;
+  color: var(--gray-700);
+  padding: 0.5rem;
+}
+form textarea::placeholder {
+  opacity: 0.4;
+}
+form textarea:active::placeholder, form textarea:focus-visible::placeholder, form textarea:focus-within::placeholder, form textarea:focus::placeholder {
+  color: var(--white);
 }
 
 header {
@@ -690,6 +708,11 @@ section.hero {
 section.hero div .content {
   gap: 3rem;
   align-items: center;
+}
+@media (min-width: 992px) {
+  section.hero div .content {
+    align-items: flex-start;
+  }
 }
 section.hero div .content h1 {
   text-align: center;
@@ -1107,11 +1130,12 @@ section.account-details .container {
 @media (min-width: 1200px) {
   section.account-details .container {
     gap: 5rem;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: auto 1fr;
     grid-template-areas: "side details";
   }
 }
 section.account-details .container .side {
+  padding: 0 3rem;
   grid-area: side;
   display: grid;
   grid-template-columns: auto 2rem auto;
@@ -1182,6 +1206,15 @@ section.account-details .container .details #basic-info {
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--gray-500);
 }
+section.account-details .container .details #details-bio label span {
+  line-height: 160%;
+  font-weight: 400;
+  color: var(--gray-700);
+  font-family: "Manrope", sans-serif;
+  font-size: 12px !important;
+  color: var(--gray-500);
+  float: none;
+}
 section.account-details .container .details form fieldset {
   display: flex;
   flex-direction: column;
@@ -1219,9 +1252,8 @@ section.courses .heading-box .input-box {
 section.courses .heading-box .input-box #categories input[list=browsers] {
   border: 1px solid var(--gray-500);
   border-radius: 8px;
-  height: 2rem;
   color: var(--gray-500);
-  padding-left: 0.5rem;
+  padding: 0.5rem;
 }
 section.courses .heading-box .input-box #search {
   position: relative;

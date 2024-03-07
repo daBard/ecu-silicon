@@ -1,11 +1,9 @@
-section.hero
-{
+section.hero {
     width: 100%;
     background-color: var(--white);
     position: relative;
 
     @include xxl {
-
     }
 
     div {
@@ -13,6 +11,10 @@ section.hero
         .content {
             gap: 3rem;
             align-items: center;
+
+            @include lg {
+                align-items: flex-start;
+            }
 
             h1 {
                 text-align: center;
@@ -34,7 +36,7 @@ section.hero
                     max-width: 100dvw;
                 }
             }
-    
+
             .brands {
                 justify-content: center;
                 display: flex;
@@ -50,7 +52,6 @@ section.hero
         @include xxl {
             display: flex;
         }
-
     }
 
     .hero-img {

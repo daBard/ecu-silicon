@@ -38,7 +38,7 @@ namespace SiliconMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult SignUp(SignUpViewModel viewModel)
+        public IActionResult Signup(SignUpViewModel viewModel)
         {
             if(!ModelState.IsValid)
             {
@@ -46,8 +46,17 @@ namespace SiliconMVC.Controllers
                 return View(viewModel);
             }
 
-            return RedirectToAction("SignIn", "User");
-           
+            return RedirectToAction("SignIn", "User");  
+        }
+
+        [HttpGet]
+        public IActionResult Details()
+        {
+            var viewModel = new UserDetailsViewModel();
+
+            ViewData["Title"] = "User details";
+
+            return View(viewModel);
         }
     }
 }

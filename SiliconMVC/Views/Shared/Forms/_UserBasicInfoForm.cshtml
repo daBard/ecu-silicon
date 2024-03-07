@@ -1,33 +1,39 @@
-﻿<form action="" id="basic-info">
+﻿@using SiliconMVC.Models
+@model UserBasicInfoModel
+
+<form method="post" id="basic-info" asp-controller="User" asp-action="BasicInfo" novalidate>
     <fieldset>
         <legend><h5>Basic info</h2></legend>
         <div class="box">
-            <label for="firstname">
-                <p class="form-label">First name</p>
-                <input type="text" id="firstname" name="firstname" placeholder="John" required>
-            </label>
+            <div id="details-firstname" class="input-box">
+                <label asp-for=FirstName></label>
+                <input asp-for="FirstName" />
+            </div>
 
-            <label for="lastname">
-                <p class="form-label">Last name</p>
-                <input type="text" id="lastname" name="lastname" placeholder="Doe" required>
-            </label>
-            <label for="email">
-                <p class="form-label">Email address</p>
-                <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
-            </label>
-            <label for="tel">
-                <p class="form-label">Phone</p>
-                <input type="tel" id="tel" name="tel" placeholder="Enter your phone">
-            </label>
+            <div id="details-lastname" class="input-box">
+                <label asp-for=LastName></label>
+                <input asp-for="LastName" />
+            </div>
+
+            <div id="details-email" class="input-box">
+                <label asp-for=Email></label>
+                <span asp-validation-for="Email"></span>
+                <input asp-for="Email" />
+            </div>
+
+            <div id="details-phone" class="input-box">
+                <label asp-for=Phone></label>
+                <input asp-for="Phone" />
+            </div>
         </div>
 
-        <label for="bio">
-            <p class="form-label">Bio <span>(optional)</span></p>
-            <textarea id="bio" name="bio" placeholder="Add a short bio..." rows="4"></textarea>
-        </label>
+        <div id="details-bio" class="input-box">
+            <label asp-for=Bio>Bio <span>(optional)</span></label>
+            <textarea asp-for="Bio" rows="4"></textarea>
+        </div>
 
         <div class="buttons-box">
-            <button class="btn btn-gray">Cancel</button>
+            <button class="btn btn-gray" asp-controller="User" asp-action="Details">Cancel</button>
             <button type="submit" class="btn-theme">Save changes</button>
         </div>
     </fieldset>

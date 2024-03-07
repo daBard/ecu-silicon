@@ -3,6 +3,7 @@
         
         <partial name="~/Views/Shared/Forms/_UserLoginForm.cshtml" model="Model"/>
 
-        <a href="">Forgot your password?</a>
+        @* !! Change Action *@
+        <a asp-controller="User" asp-action="SignIn">Forgot your password?</a> 
     </div>
 </section>

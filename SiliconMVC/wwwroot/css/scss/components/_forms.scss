@@ -45,13 +45,18 @@ form {
     input {
         all: revert;
 
+        @include standard-text;
+
         &[type=text], &[type=email], &[type=tel], &[type=password] {
             border: 1px solid var(--gray-500);
             border-radius: 8px;
-            height: 2rem;
             background-color: var(--white);
-            color: var(--gray-500);
-            padding-left: .5rem;
+            color: var(--gray-700);
+            padding: .5rem;
+
+            &::placeholder {
+                opacity: .4;
+            }
 
             &:active::placeholder, &:focus-visible::placeholder, &:focus-within::placeholder, &:focus::placeholder {
                 color: var(--white);
@@ -61,17 +66,28 @@ form {
 
     textarea {
         all: revert;
+
+        @include standard-text;
+        width: 100%;
+        width: -webkit-fill-available;
         border: 1px solid var(--gray-500);
         border-radius: 8px;
-        color: var(--gray-500);
-        padding-left: .5rem;
+        color: var(--gray-700);
+        padding: .5rem;
+
+        &::placeholder {
+            opacity: .4;
+        }
+
+        &:active::placeholder, &:focus-visible::placeholder, &:focus-within::placeholder, &:focus::placeholder {
+            color: var(--white);
+        }
     }
 }
 
-@mixin input {
+    @mixin input {
         border: 1px solid var(--gray-500);
         border-radius: 8px;
-        height: 2rem;
         color: var(--gray-500);
-        padding-left: .5rem;
-}
+        padding: .5rem;
+    }
