@@ -6,41 +6,43 @@
         <p class="text-m">Already have an account? <a asp-controller="User" asp-action="SignIn">Sign in here</a>.</p>
         <div class="box">
             <div id="signup-firstname" class="input-box">
-                <label asp-for=SignUp.FirstName></label>
-                <span asp-validation-for="SignUp.FirstName"></span>
-                <input asp-for="SignUp.FirstName" />
+                <label asp-for=Form.FirstName></label>
+                <span asp-validation-for="Form.FirstName"></span>
+                <input asp-for="Form.FirstName" />
             </div>
 
             <div id="signup-lastname" class="input-box">
-                <label asp-for=SignUp.LastName></label>
-                <span asp-validation-for="SignUp.LastName"></span>
-                <input asp-for="SignUp.LastName" />
+                <label asp-for=Form.LastName></label>
+                <span asp-validation-for="Form.LastName"></span>
+                <input asp-for="Form.LastName" />
             </div>
         </div>
 
         <div id="signup-email" class="input-box">
-            <label asp-for=SignUp.Email></label>
-            <span asp-validation-for=SignUp.Email></span>
-            <input asp-for="SignUp.Email" />
+            <label asp-for=Form.Email></label>
+            <span asp-validation-for=Form.Email></span>
+            <input asp-for="Form.Email" />
         </div>
 
         <div id="signup-password" class="input-box">
-            <label asp-for=SignUp.Password></label>
-            <span asp-validation-for="SignUp.Password"></span>
-            <input asp-for="SignUp.Password" />
+            <label asp-for=Form.Password></label>
+            <span asp-validation-for="Form.Password"></span>
+            <input asp-for="Form.Password" />
         </div>
 
         <div id="signup-confirmpassword" class="input-box">
-            <label asp-for=SignUp.ConfirmPassword></label>
-            <span asp-validation-for="SignUp.ConfirmPassword"></span>
-            <input asp-for="SignUp.ConfirmPassword" />
+            <label asp-for=Form.ConfirmPassword></label>
+            <span asp-validation-for="Form.ConfirmPassword"></span>
+            <input asp-for="Form.ConfirmPassword" />
         </div>
 
         <div id="signup-terms" class="checkbox-box">
-            <input asp-for=SignUp.TermsAndConditions>
-            <label class="text-m" asp-for="SignUp.TermsAndConditions">I agree to the <a asp-controller="User" asp-action="SignUp">Terms</a> & <a asp-controller="User" asp-action="SignUp">Conditions.</a></label>
-            <span asp-validation-for="SignUp.TermsAndConditions"></span>
+            <input asp-for=Form.TermsAndConditions>
+            <label class="text-m" asp-for="Form.TermsAndConditions">I agree to the <a asp-controller="User" asp-action="SignUp">Terms</a> & <a asp-controller="User" asp-action="SignUp">Conditions.</a></label>
+            <span asp-validation-for="Form.TermsAndConditions"></span>
         </div>
         <button type="submit" class="btn-theme">Sign up</button>
     </fieldset>
 </form>
+
+<partial name="~/Views/Shared/Scripts/_FormValidationPartial.cshtml" />

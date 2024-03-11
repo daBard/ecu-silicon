@@ -4,5 +4,5 @@ namespace SiliconMVC.ViewModels;
 
 public class SignUpViewModel
 {
-    public SignUpModel SignUp { get; set; } = new SignUpModel();
+    public SignUpModel Form { get; set; } = new SignUpModel();
 }

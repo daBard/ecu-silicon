@@ -13,13 +13,13 @@ function MenuButton_Clicked() {
 //// Light/Dark Toggle
 let domCheckbox = document.querySelector('input[name=lightdarkcheckbox]')
 
-// set initiial
+// set initial
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    domCheckbox.checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark')
+    domCheckbox.checked = true
 } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    domCheckbox.checked = false;
+    document.documentElement.setAttribute('data-theme', 'light')
+    domCheckbox.checked = false
 }
 
 // switch theme if checkbox is engaged
@@ -27,5 +27,5 @@ domCheckbox.addEventListener('change', (cb) => {
     document.documentElement.setAttribute(
         'data-theme',
         cb.target.checked ? 'dark' : 'light'
-    );
-});
+    )
+})
