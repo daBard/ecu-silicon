@@ -7,11 +7,13 @@
         <div class="box">
             <div id="details-firstname" class="input-box">
                 <label asp-for=FirstName></label>
+                <span asp-validation-for="FirstName"></span>
                 <input asp-for="FirstName" />
             </div>
 
             <div id="details-lastname" class="input-box">
                 <label asp-for=LastName></label>
+                <span asp-validation-for="LastName"></span>
                 <input asp-for="LastName" />
             </div>
 
@@ -38,3 +40,5 @@
         </div>
     </fieldset>
 </form>
+
+<partial name="~/Views/Shared/Scripts/_FormValidationPartial.cshtml" />

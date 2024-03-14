@@ -15,7 +15,7 @@
     }
 }
 
-const textLengthValidator = (value, minLength = 2) => {
+const textLengthValidator = (value, minLength = 1) => {
     if (value.length >= minLength)
         return true
     else
@@ -40,7 +40,7 @@ const emailValidator = (event) => {
 
 const passwordValidator = (event) => {
     if (event.target.dataset.valEqualtoOther !== undefined) {
-        formErrorHandler(event, compareValidator(event.target.value, document.getElementsByName(event.target.dataset.valEqualtoOther.replace('*', 'Form')[0].value)))
+        formErrorHandler(event, compareValidator(event, document.getElementsByName(event.target.dataset.valEqualtoOther.replace('*', 'Form'))[0].value))
     }
     else {
         const regEx = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/

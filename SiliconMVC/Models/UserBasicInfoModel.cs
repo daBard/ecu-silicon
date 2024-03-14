@@ -5,16 +5,18 @@ namespace SiliconMVC.Models;
 public class UserBasicInfoModel
 {
     [Display(Name = "First name", Order = 0)]
+    [Required(ErrorMessage = "Enter a valid first name")]
     [DataType(DataType.Text)]
     public string? FirstName { get; set; }
 
     [Display(Name = "Last name", Order = 1)]
+    [Required(ErrorMessage = "Enter a valid last name")]
     [DataType(DataType.Text)]
     public string? LastName { get; set; }
 
     [Display(Name = "Email address", Order = 2)]
+    [Required(ErrorMessage = "Enter a valid email address")]
     [DataType(DataType.EmailAddress)]
-    [Required(ErrorMessage = "Email address is required")]
     public string? Email { get; set; }
 
     [Display(Name = "Phone", Prompt = "Enter your phone", Order = 3)]
