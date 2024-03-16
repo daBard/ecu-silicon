@@ -6,20 +6,20 @@
         <p class="text-m">Don’t have an account yet? <a asp-controller="User" asp-action="SignUp">Sign up here.</a></p>
         
         <div id="signin-email" class="input-box">
-            <label asp-for=SignIn.Email></label>
-            <span asp-validation-for=SignIn.Email></span>
-            <input asp-for="SignIn.Email" />
+            <label asp-for=Form.Email></label>
+            <span asp-validation-for=Form.Email></span>
+            <input asp-for="Form.Email" />
         </div>
 
         <div id="signin-password" class="input-box">
-            <label asp-for=SignIn.Password></label>
-            <span asp-validation-for="SignIn.Password"></span>
-            <input asp-for="SignIn.Password" />
+            <label asp-for=Form.Password></label>
+            <span asp-validation-for="Form.Password"></span>
+            <input asp-for="Form.Password" />
         </div>
 
         <div id="signin-remember" class="checkbox-box">
-            <input asp-for=SignIn.Remember>
-            <label class="text-m" asp-for=SignIn.Remember></label>
+            <input asp-for=Form.Remember>
+            <label class="text-m" asp-for=Form.Remember></label>
         </div>
 
         <button type="submit" class="btn-theme">Sign in</button>

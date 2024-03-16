@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Business.DTOs;
+using Business.Services;
+using Microsoft.AspNetCore.Mvc;
 using SiliconMVC.ViewModels;
 
 namespace SiliconMVC.Controllers
 {
-    public class UserController : Controller
+    public class UserController(UserService userService) : Controller
     {
+        private readonly UserService _userService = userService;
+
         [HttpGet]
         public IActionResult Signin()
         {
@@ -16,15 +20,26 @@ namespace SiliconMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Signin(SignInViewModel viewModel)
+        public async Task<IActionResult> Signin(SignInViewModel viewModel)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                ViewData["Title"] = "Incorrect entry";
-                return View(viewModel);
+                try
+                {
+                    UserAuthDTO userAuthDTO = new UserAuthDTO
+                    {
+                        Email = viewModel.Form.Email,
+                        Password = viewModel.Form.Password
+                    };
+                    await _userService.CheckPassword(userAuthDTO);
+                }
+                catch(Exception ex) { Console.WriteLine(ex.Message); }
+                return RedirectToAction("Details", "User");
             }
+            ViewData["Title"] = "Incorrect entry";
+            return View(viewModel);
 
-            return RedirectToAction("Index", "Home");
+            
         }
 
         [HttpGet]
@@ -38,15 +53,33 @@ namespace SiliconMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Signup(SignUpViewModel viewModel)
+        public async Task<IActionResult> Signup(SignUpViewModel viewModel)
         {
             if(!ModelState.IsValid)
             {
                 ViewData["Title"] = "Incorrect entry";
                 return View(viewModel);
             }
-
-            return RedirectToAction("SignIn", "User");  
+            else
+            {
+                try
+                {
+                    UserCreateDTO newUser = new UserCreateDTO 
+                    { 
+                        FirstName = viewModel.Form.FirstName,
+                        LastName = viewModel.Form.LastName,
+                        Email = viewModel.Form.Email,
+                        Password = viewModel.Form.Password
+                    };
+                    if (await _userService.CreateUserAsync(newUser))
+                    {
+                        return RedirectToAction("SignIn", "User");
+                    }
+                }
+                catch(Exception ex) { Console.WriteLine(ex.Message); }
+                ViewData["Title"] = "Error";
+                return View(viewModel);
+            }
         }
 
         [HttpGet]
