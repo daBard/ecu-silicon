@@ -1,6 +1,7 @@
 ﻿@model SignInViewModel
 
 <form method="post" id="login-form" asp-controller="User" asp-action="SignIn" novalidate>
+    <div asp-validation-summary="ModelOnly"></div>
     <fieldset>
         <legend><h1>Welcome back</h1></legend>
         <p class="text-m">Don’t have an account yet? <a asp-controller="User" asp-action="SignUp">Sign up here.</a></p>

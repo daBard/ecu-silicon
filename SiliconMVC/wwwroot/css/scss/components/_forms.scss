@@ -83,6 +83,18 @@ form {
             color: var(--white);
         }
     }
+
+    .validation-summary-errors {
+        color: $gray-900;
+        background-color: pink;
+        border: 1px solid $danger;
+        padding: 1rem;
+        border-radius: 8px;
+
+        & ul li {
+            text-align: center;
+        }
+    }
 }
 
     @mixin input {

@@ -1,5 +1,7 @@
 ﻿using Business.DTOs;
 using Business.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SiliconMVC.ViewModels;
 
@@ -26,20 +28,30 @@ namespace SiliconMVC.Controllers
             {
                 try
                 {
-                    UserAuthDTO userAuthDTO = new UserAuthDTO
+                    UserAuthDTO userAuth = new UserAuthDTO
                     {
                         Email = viewModel.Form.Email,
                         Password = viewModel.Form.Password
                     };
-                    await _userService.CheckPassword(userAuthDTO);
+                    if (await _userService.SignIn(userAuth))
+                    {
+                        return RedirectToAction("Details", "User");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Email or password incorrect!");
+                    }
                 }
                 catch(Exception ex) { Console.WriteLine(ex.Message); }
-                return RedirectToAction("Details", "User");
             }
             ViewData["Title"] = "Incorrect entry";
             return View(viewModel);
+        }
 
-            
+        public new async Task<IActionResult> SignOut()
+        { 
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home"); 
         }
 
         [HttpGet]
@@ -83,7 +95,30 @@ namespace SiliconMVC.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Details()
+        {
+            var viewModel = new UserDetailsViewModel();
+
+            ViewData["Title"] = "User details";
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult DetailsSaveBasicInfo()
+        {
+            var viewModel = new UserDetailsViewModel();
+
+            ViewData["Title"] = "User details";
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult DetailsSaveAddress()
         {
             var viewModel = new UserDetailsViewModel();
 

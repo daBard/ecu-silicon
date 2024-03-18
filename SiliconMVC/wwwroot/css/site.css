@@ -548,6 +548,16 @@ form textarea::placeholder {
 form textarea:active::placeholder, form textarea:focus-visible::placeholder, form textarea:focus-within::placeholder, form textarea:focus::placeholder {
   color: var(--white);
 }
+form .validation-summary-errors {
+  color: #0B0F19;
+  background-color: pink;
+  border: 1px solid #EF4444;
+  padding: 1rem;
+  border-radius: 8px;
+}
+form .validation-summary-errors ul li {
+  text-align: center;
+}
 
 header {
   padding: 1rem;

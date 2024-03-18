@@ -10,6 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRouting(x => x.LowercaseUrls = true);
 
+builder.Services.AddAuthentication("AuthCookie").AddCookie("AuthCookie", x =>
+{
+    x.LoginPath = "/user/signin";
+    x.ExpireTimeSpan = TimeSpan.FromHours(3);
+});
+
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
 
 builder.Services.AddScoped<ErrorLogger>();
@@ -26,7 +32,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseAuthentication(); // Vem är du?
+app.UseAuthorization(); // Vad får du göra?
 
 app.MapControllerRoute(
     name: "default",

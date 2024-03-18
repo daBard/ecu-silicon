@@ -51,6 +51,20 @@ public class UserService
         return false;
     }
 
+    public async Task<bool> SignIn(UserAuthDTO userAuth)
+    {
+        try
+        {
+            var user = await _userRepo.ExistsAsync(x => x.Email == userAuth.Email);
+            if ( user != null) 
+            {
+                return await CheckPassword(userAuth);
+            }
+        }
+        catch(Exception ex) { LogError(ex.Message); }
+        return false;
+    }
+
     public async Task<bool> CheckPassword(UserAuthDTO userAuth)
     {
         var user = await _userRepo.GetOneAsync(x => x.Email == userAuth.Email);
