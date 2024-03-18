@@ -55,27 +55,17 @@ public class UserService
     {
         try
         {
-            var user = await _userRepo.ExistsAsync(x => x.Email == userAuth.Email);
+            var user = await _userRepo.GetOneAsync(x => x.Email == userAuth.Email);
             if ( user != null) 
             {
-                return await CheckPassword(userAuth);
+                var storedAuth = await _authRepo.ExistsAsync(x => x.Id == user.AuthId);
+
+                return ValidateSecurePassword(userAuth.Password, storedAuth.Password, storedAuth.SecurityKey);
             }
         }
         catch(Exception ex) { LogError(ex.Message); }
         return false;
     }
-
-    public async Task<bool> CheckPassword(UserAuthDTO userAuth)
-    {
-        var user = await _userRepo.GetOneAsync(x => x.Email == userAuth.Email);
-
-        var storedAuth = await _authRepo.ExistsAsync(x => x.Id == user.AuthId);
-
-        var result = ValidateSecurePassword(userAuth.Password, storedAuth.Password, storedAuth.SecurityKey);
-        
-        return result;
-    }
-
 
     private void GenerateSecurePassword(string password, out string generatedPassword, out string securityKey)
     {

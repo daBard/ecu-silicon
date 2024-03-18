@@ -85,6 +85,7 @@ namespace SiliconMVC.Controllers
                     };
                     if (await _userService.CreateUserAsync(newUser))
                     {
+                        ///CLAIMS!!!
                         return RedirectToAction("SignIn", "User");
                     }
                 }

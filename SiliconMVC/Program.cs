@@ -16,7 +16,7 @@ builder.Services.AddAuthentication("AuthCookie").AddCookie("AuthCookie", x =>
     x.ExpireTimeSpan = TimeSpan.FromHours(3);
 });
 
-builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Work")));
 
 builder.Services.AddScoped<ErrorLogger>();
 builder.Services.AddScoped<UserService>();
