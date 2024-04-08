@@ -10,4 +10,14 @@ public class HomeController : Controller
 
         return View();
     }
+
+    // !! TESTING
+
+    [HttpPost]
+    public IActionResult SubscribeToNewsletter()
+    {
+
+
+        RedirectToAction("Index", "Home");
+    }
 }

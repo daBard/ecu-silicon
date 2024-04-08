@@ -19,6 +19,7 @@ builder.Services.AddAuthentication("AuthCookie").AddCookie("AuthCookie", x =>
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Work")));
 
 builder.Services.AddScoped<ErrorLogger>();
+builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<UserRepo>();
 builder.Services.AddScoped<AuthRepo>();

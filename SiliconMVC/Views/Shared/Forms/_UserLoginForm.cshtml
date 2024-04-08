@@ -1,10 +1,10 @@
 ﻿@model SignInViewModel
 
-<form method="post" id="login-form" asp-controller="User" asp-action="SignIn" novalidate>
+<form method="post" id="login-form" asp-controller="Auth" asp-action="SignIn" novalidate>
     <div asp-validation-summary="ModelOnly"></div>
     <fieldset>
         <legend><h1>Welcome back</h1></legend>
-        <p class="text-m">Don’t have an account yet? <a asp-controller="User" asp-action="SignUp">Sign up here.</a></p>
+        <p class="text-m">Don’t have an account yet? <a asp-controller="Auth" asp-action="SignUp">Sign up here.</a></p>
         
         <div id="signin-email" class="input-box">
             <label asp-for=Form.Email></label>
