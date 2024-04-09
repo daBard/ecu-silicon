@@ -2,7 +2,7 @@
 
 namespace SiliconMVC.ViewModels;
 
-public class UserDetailsViewModel
+public class UserDetailsViewModel()
 {
     public UserBasicInfoModel BasicInfo = new UserBasicInfoModel() { 
         FirstName = "Kalle",

@@ -12,13 +12,11 @@ public class AuthService
 {
     private readonly ErrorLogger _errorLogger;
     private readonly UserRepo _userRepo;
-    private readonly AuthRepo _authRepo;
 
-    public AuthService(ErrorLogger errorLogger, UserRepo userRepo, AuthRepo authRepo)
+    public AuthService(ErrorLogger errorLogger, UserRepo userRepo)
     {
         _errorLogger = errorLogger;
         _userRepo = userRepo;
-        _authRepo = authRepo;
     }
 
     public async Task<bool> CreateUserAsync(UserCreateDTO newUser)
@@ -33,12 +31,8 @@ public class AuthService
             userEntity.FirstName = newUser.FirstName;
             userEntity.LastName = newUser.LastName;
             userEntity.Email = newUser.Email;
-
-            userEntity.Auth = new AuthEntity();
-
-            userEntity.Auth.Password = password;
-            userEntity.Auth.SecurityKey = securityKey;
-
+            userEntity.PasswordHash = password;
+            userEntity.SecurityStamp = securityKey;
             userEntity.RegistrationDate = DateTime.Now;
 
             var result = await _userRepo.CreateAsync(userEntity);
@@ -58,9 +52,9 @@ public class AuthService
             var user = await _userRepo.GetOneAsync(x => x.Email == userAuth.Email);
             if (user != null)
             {
-                var storedAuth = await _authRepo.ExistsAsync(x => x.Id == user.AuthId);
+                //var storedAuth = await _authRepo.ExistsAsync(x => x.Id == user.AuthId);
 
-                return ValidateSecurePassword(userAuth.Password, storedAuth.Password, storedAuth.SecurityKey);
+                //return ValidateSecurePassword(userAuth.Password, storedAuth.Password, storedAuth.SecurityKey);
             }
         }
         catch (Exception ex) { LogError(ex.Message); }

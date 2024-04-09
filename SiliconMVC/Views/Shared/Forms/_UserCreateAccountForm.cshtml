@@ -1,6 +1,7 @@
 ﻿@model SignUpViewModel
 
 <form method="post" id="create-account-form" asp-controller="Auth" asp-action="SignUp" novalidate>
+    <div asp-validation-summary="ModelOnly"></div>
     <fieldset>
         <legend><h1>Create account</h1></legend>
         <p class="text-m">Already have an account? <a asp-controller="Auth" asp-action="SignIn">Sign in here</a>.</p>

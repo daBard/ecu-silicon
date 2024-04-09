@@ -13,11 +13,11 @@ public class HomeController : Controller
 
     // !! TESTING
 
-    [HttpPost]
-    public IActionResult SubscribeToNewsletter()
-    {
+    //[HttpPost]
+    //public IActionResult SubscribeToNewsletter()
+    //{
 
 
-        RedirectToAction("Index", "Home");
-    }
+    //    RedirectToAction("Index", "Home");
+    //}
 }

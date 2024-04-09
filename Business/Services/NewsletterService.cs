@@ -12,7 +12,7 @@ public class NewsletterService
         using var client = new HttpClient();
 
         // Make GET request to API
-        HttpResponseMessage response = await client.PostAsync();
+        //HttpResponseMessage response = await client.PostAsync();
 
         return true;
     }
