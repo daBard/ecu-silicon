@@ -37,6 +37,10 @@ section.account-details {
                 width: 120px;
                 border-radius: 50%;
 
+                .avatar-img {
+                    width: 100%;
+                }
+
                 .change-avatar {
                     position: absolute;
                     bottom: 0rem;

@@ -4,13 +4,13 @@
     <div class="container w-max">
         <aside class="side">
             <div class="avatar-box">
-                <img class="avatar-img" src="~/img/avatar.png" alt="">
+                <img class="avatar-img" src="~/img/avatar.svg" alt="">
                 <div class="change-avatar">
                     <img src="~/img/icons/bx-refresh.svg" alt="">
                 </div>
             </div>
             <div class="short-info-box">
-                <p class="h5">@($"{Model.BasicInfo.FirstName} {Model.BasicInfo.LastName}")</p>
+                <p class="h5">@($"{Model.BasicInfo!.FirstName} {Model.BasicInfo.LastName}")</p>
                 <p class="text-m">@($"{Model.BasicInfo.Email}")</p>
             </div>
             <div class="buttons-box">
@@ -27,8 +27,11 @@
 
         <div class="details">
             <h1>Account details</h1>
-            <partial name="~/Views/Shared/Forms/_UserBasicInfoForm.cshtml" model="Model.BasicInfo" />
-            <partial name="~/Views/Shared/Forms/_UserAddressForm.cshtml" model="Model.Address"/>
+            @* <div>
+                @TempData["StatusMessage"]
+            </div> *@
+            <partial name="~/Views/Shared/Forms/_UserBasicInfoForm.cshtml" model="Model" />
+            <partial name="~/Views/Shared/Forms/_UserAddressForm.cshtml" model="Model"/>
         </div>
     </div>
 </section>

@@ -1,37 +1,37 @@
 ﻿@using SiliconMVC.Models
-@model UserBasicInfoModel
+@model UserDetailsViewModel
 
-<form method="post" id="basic-info" asp-controller="User" asp-action="BasicInfo" novalidate>
+<form method="post" id="basic-info" asp-controller="User" asp-action="DetailsSaveBasicInfo" novalidate>
     <fieldset>
-        <legend><h5>Basic info</h2></legend>
+        <legend><h2 class="h5">Basic info</h2></legend>
         <div class="box">
             <div id="details-firstname" class="input-box">
-                <label asp-for=FirstName></label>
-                <span asp-validation-for="FirstName"></span>
-                <input asp-for="FirstName" />
+                <label asp-for=BasicInfo!.FirstName></label>
+                <span asp-validation-for="BasicInfo!.FirstName"></span>
+                <input asp-for="BasicInfo!.FirstName" />
             </div>
 
             <div id="details-lastname" class="input-box">
-                <label asp-for=LastName></label>
-                <span asp-validation-for="LastName"></span>
-                <input asp-for="LastName" />
+                <label asp-for=BasicInfo!.LastName></label>
+                <span asp-validation-for="BasicInfo!.LastName"></span>
+                <input asp-for="BasicInfo!.LastName" />
             </div>
 
             <div id="details-email" class="input-box">
-                <label asp-for=Email></label>
-                <span asp-validation-for="Email"></span>
-                <input asp-for="Email" />
+                <label asp-for=BasicInfo!.Email></label>
+                <span asp-validation-for="BasicInfo!.Email"></span>
+                <input asp-for="BasicInfo!.Email" />
             </div>
 
             <div id="details-phone" class="input-box">
-                <label asp-for=Phone></label>
-                <input asp-for="Phone" />
+                <label asp-for=BasicInfo!.Phone></label>
+                <input asp-for="BasicInfo!.Phone" />
             </div>
         </div>
 
         <div id="details-bio" class="input-box">
-            <label asp-for=Bio>Bio <span>(optional)</span></label>
-            <textarea asp-for="Bio" rows="4"></textarea>
+            <label asp-for=BasicInfo!.Bio>Bio <span>(optional)</span></label>
+            <textarea asp-for="BasicInfo!.Bio" rows="4"></textarea>
         </div>
 
         <div class="buttons-box">

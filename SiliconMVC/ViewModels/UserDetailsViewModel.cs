@@ -4,11 +4,7 @@ namespace SiliconMVC.ViewModels;
 
 public class UserDetailsViewModel()
 {
-    public UserBasicInfoModel BasicInfo = new UserBasicInfoModel() { 
-        FirstName = "Kalle",
-        LastName = "Anka",
-        Email = "karl.ankselius@example.com"
-    };
+    public UserBasicInfoModel? BasicInfo { get; set; }
 
-    public UserAddressModel Address = new UserAddressModel();
+    public UserAddressModel? Address { get; set; }
 }

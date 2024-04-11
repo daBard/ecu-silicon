@@ -1,29 +1,29 @@
 ﻿@using SiliconMVC.Models
-@model UserAddressModel
+@model UserDetailsViewModel
 
-<form method="post" id="address" asp-controller="User" asp-action="Address" novalidate>
+<form method="post" id="address" asp-controller="User" asp-action="DetailsSaveAddress" novalidate>
     <fieldset>
-        <legend><h5>Address</h2></legend>
+        <legend><h2 class="h5">Address</h2></legend>
         
         <div id="details-address1" class="input-box">
-            <label asp-for=AddressLine1></label>
-            <input asp-for="AddressLine1" />
+            <label asp-for=Address!.AddressLine1></label>
+            <input asp-for="Address!.AddressLine1" />
         </div>
 
         <div id="details-address2" class="input-box">
-            <label asp-for=AddressLine2></label>
-            <input asp-for="AddressLine2" />
+            <label asp-for=Address!.AddressLine2></label>
+            <input asp-for="Address!.AddressLine2" />
         </div>
 
         <div class="box">
             <div id="details-postalcode" class="input-box">
-                <label asp-for=PostalCode></label>
-                <input asp-for="PostalCode" />
+                <label asp-for=Address!.PostalCode></label>
+                <input asp-for="Address!.PostalCode" />
             </div>
 
             <div id="city" class="input-box">
-                <label asp-for=City></label>
-                <input asp-for="City" />
+                <label asp-for=Address!.City></label>
+                <input asp-for="Address!.City" />
             </div>
         </div>
 

@@ -14,6 +14,7 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     private readonly DataContext _dataContext = dataContext;
 
     [HttpGet]
+    [Route("/signup")]
     public IActionResult Signup()
     {
         ViewData["Title"] = "New Account";
@@ -24,6 +25,7 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     }
 
     [HttpPost]
+    [Route("/signup")]
     public async Task<IActionResult> Signup(SignUpViewModel viewModel)
     {
         try
@@ -73,6 +75,7 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     }
 
     [HttpGet]
+    [Route("/signin")]
     public IActionResult Signin(string returnUrl)
     {
         ViewData["Title"] = "Sign In";
@@ -85,7 +88,8 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     }
 
     [HttpPost]
-    public async Task<IActionResult> Signin(SignInViewModel viewModel, string returnUrl)
+    [Route("/signin")]
+    public async Task<IActionResult> Signin(SignInViewModel viewModel, string returnUrl = "/user/details")
     {
         if (ModelState.IsValid)
         {
@@ -102,6 +106,7 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
         return View(viewModel);
     }
 
+    [Route("/signout")]
     public new async Task<IActionResult> SignOut()
     {
         await _signInManager.SignOutAsync();

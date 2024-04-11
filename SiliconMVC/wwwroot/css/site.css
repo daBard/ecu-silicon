@@ -1168,6 +1168,9 @@ section.account-details .container .side .avatar-box {
   width: 120px;
   border-radius: 50%;
 }
+section.account-details .container .side .avatar-box .avatar-img {
+  width: 100%;
+}
 section.account-details .container .side .avatar-box .change-avatar {
   position: absolute;
   bottom: 0rem;

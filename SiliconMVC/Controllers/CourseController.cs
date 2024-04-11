@@ -6,6 +6,7 @@ namespace SiliconMVC.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Title"] = "Courses";
             return View();
         }
     }

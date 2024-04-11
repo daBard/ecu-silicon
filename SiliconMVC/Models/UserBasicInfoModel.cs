@@ -7,12 +7,12 @@ public class UserBasicInfoModel
     [Display(Name = "First name", Order = 0)]
     [Required(ErrorMessage = "Enter a valid first name")]
     [DataType(DataType.Text)]
-    public string? FirstName { get; set; }
+    public string FirstName { get; set; } = null!;
 
     [Display(Name = "Last name", Order = 1)]
     [Required(ErrorMessage = "Enter a valid last name")]
     [DataType(DataType.Text)]
-    public string? LastName { get; set; }
+    public string LastName { get; set; } = null!;
 
     [Display(Name = "Email address", Order = 2)]
     [Required(ErrorMessage = "Enter a valid email address")]

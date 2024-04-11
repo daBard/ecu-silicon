@@ -1,25 +1,25 @@
 ﻿using Business.DTOs;
 using Helper;
 using Infrastructure.Entities;
-using Infrastructure.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 namespace Business.Services;
 
-public class UserService(ErrorLogger errorLogger, UserRepo userRepo)
-{
+public class UserService(ErrorLogger errorLogger, UserManager<UserEntity> userManager)
+{ 
     private readonly ErrorLogger _errorLogger = errorLogger;
-    private readonly UserRepo _userRepo = userRepo;
+    private readonly UserManager<UserEntity> _userManager = userManager;
 
-    public async Task<UserDetailsDTO> GetUserDetailsAsync(string authId)
+    public async Task<UserDetailsDTO> GetUserDetailsAsync(string userId)
     {
         try
         {
-            var userEntity = await _userRepo.GetOneAsync(x => x.Id == authId);
+            var userEntity = await _userManager.FindByIdAsync(userId);
             if (userEntity != null) 
             {
                 UserDetailsDTO userDetailsDTO = new UserDetailsDTO
                 {
-                    Id = userEntity.Id,
+                    UserId = userEntity.Id,
                     FirstName = userEntity.FirstName,
                     LastName = userEntity.LastName,
                     Email = userEntity.Email,
@@ -38,9 +38,10 @@ public class UserService(ErrorLogger errorLogger, UserRepo userRepo)
     {
         try
         {
+            //var user = await _userManager.GetUserAsync();
             UserEntity userEntity = new UserEntity
             {
-                Id = userDetailsDTO.Id,
+                Id = userDetailsDTO.UserId,
                 FirstName = userDetailsDTO.FirstName,
                 LastName = userDetailsDTO.LastName,
                 Email = userDetailsDTO.Email,
@@ -48,7 +49,7 @@ public class UserService(ErrorLogger errorLogger, UserRepo userRepo)
                 Bio = userDetailsDTO.Bio
             };
 
-            var result = await _userRepo.UpdateAsync(x => x.Id == userEntity.Id, userEntity);
+            var result = await _userManager.UpdateAsync(userEntity);
             if (result != null)
             {
                 return true;
