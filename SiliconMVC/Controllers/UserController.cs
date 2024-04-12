@@ -46,7 +46,7 @@ namespace SiliconMVC.Controllers
                 },
                 Address = new UserAddressModel
                 {
-                    AddressLine1 = user.Address?.Address1 ?? "DENNA VAR NULL",
+                    AddressLine1 = user.Address?.Address1, //?? "DENNA VAR NULL"
                     AddressLine2 = user.Address?.Address2,
                     PostalCode = user.Address?.PostalCode,
                     City = user.Address?.City
