@@ -17,16 +17,16 @@ public class UserService(ErrorLogger errorLogger, UserManager<UserEntity> userMa
             var userEntity = await _userManager.FindByIdAsync(userId);
             if (userEntity != null) 
             {
-                UserDetailsDTO userDetailsDTO = new UserDetailsDTO
-                {
-                    UserId = userEntity.Id,
-                    FirstName = userEntity.FirstName,
-                    LastName = userEntity.LastName,
-                    Email = userEntity.Email,
-                    Phone = userEntity.Phone,
-                    Bio = userEntity.Bio
-                };
-                return userDetailsDTO;
+                //UserDetailsDTO userDetailsDTO = new UserDetailsDTO
+                //{
+                //    UserId = userEntity.Id,
+                //    FirstName = userEntity.FirstName,
+                //    LastName = userEntity.LastName,
+                //    Email = userEntity.Email,
+                //    Phone = userEntity.Phone,
+                //    Bio = userEntity.Bio
+                //};
+                //return userDetailsDTO;
             }   
         }
         catch(Exception ex) { LogError(ex.Message); }
@@ -39,21 +39,21 @@ public class UserService(ErrorLogger errorLogger, UserManager<UserEntity> userMa
         try
         {
             //var user = await _userManager.GetUserAsync();
-            UserEntity userEntity = new UserEntity
-            {
-                Id = userDetailsDTO.UserId,
-                FirstName = userDetailsDTO.FirstName,
-                LastName = userDetailsDTO.LastName,
-                Email = userDetailsDTO.Email,
-                Phone = userDetailsDTO.Phone,
-                Bio = userDetailsDTO.Bio
-            };
+            //UserEntity userEntity = new UserEntity
+            //{
+            //    Id = userDetailsDTO.UserId,
+            //    FirstName = userDetailsDTO.FirstName,
+            //    LastName = userDetailsDTO.LastName,
+            //    Email = userDetailsDTO.Email,
+            //    Phone = userDetailsDTO.Phone,
+            //    Bio = userDetailsDTO.Bio
+            //};
 
-            var result = await _userManager.UpdateAsync(userEntity);
-            if (result != null)
-            {
-                return true;
-            }
+            //var result = await _userManager.UpdateAsync(userEntity);
+            //if (result != null)
+            //{
+            //    return true;
+            //}
         }
         catch(Exception ex) { LogError(ex.Message); }
 

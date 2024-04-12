@@ -107,8 +107,8 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     }
 
     [Route("/signout")]
-    public new async Task<IActionResult> SignOut()
-    {
+    public new async Task<IActionResult> Signout()
+    { 
         await _signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
     }

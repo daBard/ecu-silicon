@@ -29,13 +29,20 @@ namespace SiliconMVC.Controllers
 
             var viewModel = new UserDetailsViewModel
             {
+                ProfileInfo = new UserProfileInfoModel
+                {
+                    ProfileImg = user!.ProfileImg,
+                    FirstName = user!.FirstName,
+                    LastName = user!.LastName,
+                    Email = user.Email!
+                },
                 BasicInfo = new UserBasicInfoModel
                 {
                     FirstName = user!.FirstName,
                     LastName = user!.LastName,
                     Email = user.Email!,
                     Phone = user.PhoneNumber,
-                    Bio = user.Bio
+                    Bio = user.Bio,
                 },
                 Address = new UserAddressModel
                 {
