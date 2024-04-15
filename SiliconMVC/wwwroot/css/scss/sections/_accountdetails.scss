@@ -39,6 +39,7 @@ section.account-details {
 
                 .avatar-img {
                     width: 100%;
+                    border-radius: 50%;
                 }
 
                 .change-avatar {
@@ -54,6 +55,16 @@ section.account-details {
                     border: 1px solid var(--gray-300);
                     border-radius: 15px;
                     cursor: pointer;
+
+                    #fileUploader {
+                        display: none;
+                    }
+
+                    label {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
                 }
             }
 

@@ -1,12 +1,30 @@
-﻿<header class="w-full d-flex center">
+﻿@inject SignInManager<UserEntity> SigninManager
+@inject UserManager<UserEntity> UserManager
+
+@{
+    bool signedIn = false;
+    UserEntity user = new UserEntity();
+
+    if(SigninManager.IsSignedIn(User))
+    {
+        signedIn = true;
+        user = await UserManager.GetUserAsync(User);
+    }  
+}
+
+<header class="w-full d-flex center">
     <div class="container w-max">
         <a id="logo" asp-controller="Home" asp-action="Index">
             <img src="" alt="Silicon Logo">
         </a>
         <div id="menu">
             <nav>
-                <a class="menu-link">Overview</a>
-                <a class="menu-link">Features</a>
+                <a asp-controller="Home" asp-action="Index" asp-fragment="newsletter" class="menu-link">Overview</a>
+                <a asp-controller="Home" asp-action="Index" asp-fragment="newsletter" class="menu-link">Features</a>
+                @if(signedIn)
+                {
+                    <a class="menu-link" asp-action="Index" asp-controller="Course">Courses</a>
+                }
                 <a class="menu-link">Contact</a>
             </nav>
 
@@ -18,15 +36,25 @@
                 </label>
                 <div class="">Dark</div>
             </div>
+
             <div class="account-buttons">
-                <a class="btn-gray" asp-controller="Auth" asp-action="Signin">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    <span>Sign in</span>
-                </a>
-                <a class="btn-theme" asp-controller="Auth" asp-action="Signup">
-                    <i class="fa-regular fa-user"></i>
-                    <span>Sign up</span>
-                </a>
+                @if (signedIn)
+                {
+                    <a class="header-profile" asp-action="Details" asp-controller="User">
+                        <img src="~/img/uploads/profiles/@(user!.ProfileImg)" alt="@user.FirstName @user.LastName" />
+                    </a>
+                }
+                else
+                {
+                    <a class="btn-gray" asp-controller="Auth" asp-action="Signin">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        <span>Sign in</span>
+                    </a>
+                    <a class="btn-theme" asp-controller="Auth" asp-action="Signup">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Sign up</span>
+                    </a>
+                }
             </div>
         </div>
 

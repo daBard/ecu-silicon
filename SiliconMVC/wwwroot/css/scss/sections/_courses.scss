@@ -12,7 +12,9 @@ section.courses {
             display: flex;
             gap: 1rem;
 
-            #categories input[list="browsers"] { @include input; }
+            #category-filter select {
+                @include select;
+            }
 
             #search {
                 position: relative;
@@ -45,15 +47,22 @@ section.courses {
             @include shadow-s;
             position: relative;
             border-radius: 8px;
-            padding-bottom: 1rem;
 
-            &:hover { 
+            &:hover {
                 @include shadow-l;
-                scale: 1.05;
+                /*scale: 1.01;*/
+
+                .content .text-box p.h5 {
+                    text-decoration: underline;
+                }
             }
 
             .content {
                 text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                gap: .5rem;
 
                 img {
                     border-radius: 8px 8px 0 0;
@@ -63,39 +72,45 @@ section.courses {
                 }
 
                 .text-box {
+                    flex: 1 1 auto;
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;
-                    padding: 0 1rem;
+                    padding: 0 1rem 1rem 1rem;
 
-                    .price { font-weight: bold; }
+                    p.h5 {
+                        flex: 1 1 auto;
+                    }
 
-                    .price.sale {
-                        color: $danger;
+                    .price {
+                        flex: 0 1 auto;
 
-                        &::after {
-                            padding-left: .5rem;
-                            font-weight: 400;
+                        font-weight: bold;
+
+                        &.sale-new {
+                            color: $danger;
+                        }
+
+                        &.sale-old {
+                            color: var(--gray-500);
+                            font-weight: 500;
+                            text-decoration: line-through;
+                        }
+                    }
+
+                    .info-box {
+                        flex: 0 1 auto;
+                        display: flex;
+                        gap: 1rem;
+                        padding-top: 1rem;
+                        border-top: 1px solid var(--gray-300);
+
+                        .hours, .rating {
                             color: var(--gray-600);
-                            content: "$1.50";
                         }
                     }
                 }
-
-                .info-box {
-                    display: flex;
-                    gap: 1rem;
-                    padding-top: 1rem;
-                    border-top: 1px solid var(--gray-300);
-
-                    .hours, .rating {
-                        color: var(--gray-600);
-                    }
-                    
-                }
             }
-
-            
 
             .tag {
                 position: absolute;
@@ -128,11 +143,12 @@ section.courses {
 
                 &:hover {
                     background-color: $theme;
-                    i { color: var(--white); }
+
+                    i {
+                        color: var(--white);
+                    }
                 }
             }
-
-            
         }
     }
 }

@@ -1,28 +1,41 @@
 ﻿@model UserDetailsViewModel
+@inject UserManager<UserEntity> UserManager
+
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
 
 <section class="account-details w-full d-flex center">
     <div class="container w-max">
         <aside class="side">
-            <div class="avatar-box">
-                <img class="avatar-img" src="~/img/profile/@(Model.ProfileInfo!.ProfileImg)" alt="">
-                <div class="change-avatar">
-                    <img src="~/img/icons/bx-refresh.svg" alt="">
+            @if (user != null)
+            {
+                <div class="avatar-box">
+                    <img class="avatar-img" src="~/img/uploads/profiles/@(user.ProfileImg)" alt="@user.FirstName @user.LastName" />
+
+                    <form class="change-avatar" enctype="multipart/form-data" method="post" asp-action="UploadProfileImage" asp-controller="User">
+                        <input id="fileUploader" type="file" name="file" hidden/>
+                        <label for="fileUploader">
+                            <img src="~/img/icons/bx-refresh.svg" alt="">
+                        </label>
+                    </form>
+
                 </div>
-            </div>
-            <div class="short-info-box">
-                <p class="h5">@($"{Model.ProfileInfo!.FirstName} {Model.ProfileInfo.LastName}")</p>
-                <p class="text-m">@($"{Model.ProfileInfo.Email}")</p>
-            </div>
-            <div class="buttons-box">
-                <button class="btn-theme" asp-controller="User" asp-action="Details">
-                    <i class="fas fa-cog"></i>
-                    <p>Account Details</p>
-                </button>
-                <a type="button" class="btn-white" asp-controller="Auth" asp-action="Signout">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    <p>Sign out</p>
-                </a>
-            </div>
+                <div class="short-info-box">
+                    <p class="h5">@($"{user.FirstName} {user.LastName}")</p>
+                    <p class="text-m">@($"{user.Email}")</p>
+                </div>
+                <div class="buttons-box">
+                    <button class="btn-theme" asp-controller="User" asp-action="Details">
+                        <i class="fas fa-cog"></i>
+                        <p>Account Details</p>
+                    </button>
+                    <a type="button" class="btn-white" asp-controller="Auth" asp-action="Signout">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <p>Sign out</p>
+                    </a>
+                </div>
+            }
         </aside>
 
         <div class="details">

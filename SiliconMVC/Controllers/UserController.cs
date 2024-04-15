@@ -29,13 +29,14 @@ namespace SiliconMVC.Controllers
 
             var viewModel = new UserDetailsViewModel
             {
-                ProfileInfo = new UserProfileInfoModel
-                {
-                    ProfileImg = user!.ProfileImg,
-                    FirstName = user!.FirstName,
-                    LastName = user!.LastName,
-                    Email = user.Email!
-                },
+                //ANVÄNDER INJECTION I STÄLLET
+                //ProfileInfo = new UserProfileInfoModel
+                //{
+                //    ProfileImg = user!.ProfileImg,
+                //    FirstName = user!.FirstName,
+                //    LastName = user!.LastName,
+                //    Email = user.Email!
+                //},
                 BasicInfo = new UserBasicInfoModel
                 {
                     FirstName = user!.FirstName,
@@ -101,7 +102,7 @@ namespace SiliconMVC.Controllers
                     var nameIdentifier = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
                     var user = await _dataContext.Users.Include(u => u.Address).SingleOrDefaultAsync(x => x.Id == nameIdentifier);
 
-                    if (user.Address != null)
+                    if (user!.Address != null)
                     {
                         user.Address.Address1 = model.Address!.AddressLine1;
                         user.Address.Address2 = model.Address!.AddressLine2;
@@ -133,6 +134,35 @@ namespace SiliconMVC.Controllers
                 TempData["StatusMessage"] = "Error - Address not saved!";
             }
             
+            return RedirectToAction("Details", "User");
+        }
+    
+
+        [HttpPost]
+        public async Task<IActionResult> UploadProfileImage(IFormFile file)
+        {
+            try
+            {
+                var user = await _userManager.GetUserAsync(User);
+
+                if (user != null && file != null && file.Length != 0)
+                {
+                    var fileName = $"{user.Id}_{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/img/uploads/profiles", fileName);
+
+                    using var fs = new FileStream(filePath, FileMode.Create);
+                    await file.CopyToAsync(fs);
+
+                    user.ProfileImg = fileName;
+                    await _userManager.UpdateAsync(user);
+                }
+                else
+                {
+                    TempData["StatusMessage"] = "Error - Profile image not uploaded!";
+                }
+            }
+            catch(Exception ex) { Console.WriteLine(ex.Message); }
+
             return RedirectToAction("Details", "User");
         }
     }

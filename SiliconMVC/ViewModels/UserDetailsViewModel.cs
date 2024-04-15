@@ -4,7 +4,7 @@ namespace SiliconMVC.ViewModels;
 
 public class UserDetailsViewModel()
 {
-    public UserProfileInfoModel? ProfileInfo { get; set; }
+    //public UserProfileInfoModel? ProfileInfo { get; set; }
 
     public UserBasicInfoModel? BasicInfo { get; set; }
 

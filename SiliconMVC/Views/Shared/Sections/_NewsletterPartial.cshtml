@@ -1,11 +1,12 @@
-﻿<section class="newsletter w-full d-flex center">
+﻿@model SubscribeViewModel
+
+<section id="newsletter" class="newsletter w-full d-flex center">
     <div class="container d-flex column">
         <div class="heading">
             <h2 class="h1">Don't want to miss anything?</h2>
             <img src="~/img/arrows.svg" alt="">
         </div>
         
-        <partial name="~/Views/Shared/Forms/_NewsletterForm.cshtml" />
+        <partial name="~/Views/Shared/Forms/_NewsletterForm.cshtml" model="Model" />
     </div>
-
 </section>

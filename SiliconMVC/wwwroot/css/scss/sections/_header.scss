@@ -84,6 +84,11 @@ header {
                 }
             }
 
+            .header-profile img {
+                height: 3rem;
+                border-radius: 50%;
+            }
+
             .account-buttons {
                 grid-area: buttons;
                 display: flex;

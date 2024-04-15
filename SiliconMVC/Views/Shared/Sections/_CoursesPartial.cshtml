@@ -1,17 +1,19 @@
-﻿<section class="courses w-full d-flex center">
+﻿@model CourseViewModel
+
+<section class="courses w-full d-flex center">
     <div class="container w-max d-flex column">
         <div class="heading-box">
             <h1>Courses</h1>
             <div class="input-box">
-                <form id="categories" action="">
-                    <input list="browsers" placeholder="All categories">
-                    <datalist id="browsers">
-                        <option value="Edge" />
-                        <option value="Firefox" />
-                        <option value="Chrome" />
-                        <option value="Opera" />
-                        <option value="Safari" />
-                </datalist>
+                <form id="category-filter" action="">
+                    <select list="categories" placeholder="All categories">
+                        <option>All categories</option>
+                        <option>Chrome</option>
+                        <option>Edge</option>
+                        <option>Firefox</option>
+                        <option>Opera</option>                        
+                        <option>Safari</option>
+                    </select>
                 </form>
                 <form id="search" action="">
                     <input type="text" placeholder="Search Courses">
@@ -20,132 +22,40 @@
             </div>
         </div>
         <div class="grid-box">
-            <div class="grid-item">
-                <a href="" class="content">
-                    <img src="~/img/courses/laptop.png" alt="">
-                    <div class="text-box">
-                        <p class="h5">Fullstack web developer courses from scratch</p>
-                        <p class="text-s">By Robert Fox</p>
-                        <p class="text-l price">$12.50</p>
-                        <div class="info-box">
-                            <p class="text-s hours">220 hours</p>
-                            <p class="text-s rating">94% (4.2K)</p>
-                        </div>
+            @if (Model.Courses != null)
+            {
+                foreach (var course in Model.Courses)
+                {
+                    <div class="grid-item">
+                        <a asp-action="Index" asp-controller="Course" asp-route-id="@course.Id" class="content">
+                            <img src="~/img/courses/@course.ImageUrl" alt="Image for @course.Title">
+                            <div class="text-box">
+                                <p class="h5">@course.Title</p>
+                                <p class="text-s">By @course.Author</p>
+                                @if (course.DiscountPrice >= 0)
+                                {
+                                    <p><span class="text-l price sale-new">$@Math.Round(course.DiscountPrice, 2)</span> <span class="text-l price sale-old">$@Math.Round(course.Price, 2)</span></p>
+                                }
+                                else
+                                {
+                                    <p class="text-l price">$@Math.Round(course.Price, 2)</p>
+                                }
+                                <div class="info-box">
+                                    <p class="text-s hours">@course.Hours hours</p>
+                                    <p class="text-s rating">@course.LikesInPercent()% (@course.TotalBuysInK()K)</p>
+                                </div>
+                            </div>
+                        </a>
+                        @if (course.BestSeller)
+                        {
+                            <div class="text-s tag">Best Seller</div>
+                        }
+                        <button class="bookmark">
+                            <i class="fa-regular fa-bookmark"></i>
+                        </button>
                     </div>
-                </a>
-                <div class="text-s tag">Best Seller</div>
-                <button class="bookmark">
-                    <i class="fa-regular fa-bookmark"></i>
-                </button>
-            </div>
-            <div class="grid-item">
-                <a href="" class="content">
-                    <img src="~/img/courses/laptop.png" alt="">
-                    <div class="text-box">
-                        <p class="h5">Fullstack web developer courses from scratch</p>
-                        <p class="text-s">By Robert Fox</p>
-                        <p class="text-l price sale">$12.50</p>
-                        <div class="info-box">
-                            <p class="text-s hours">220 hours</p>
-                            <p class="text-s rating">94% (4.2K)</p>
-                        </div>
-                    </div>
-                </a>
-                <div class="text-s tag">Best Seller</div>
-                <button class="bookmark">
-                    <i class="fa-regular fa-bookmark"></i>
-                </button>
-            </div>
-            <div class="grid-item">
-                <a href="" class="content">
-                    <img src="~/img/courses/laptop.png" alt="">
-                    <div class="text-box">
-                        <p class="h5">Fullstack web developer courses from scratch</p>
-                        <p class="text-s">By Robert Fox</p>
-                        <p class="text-l price">$12.50</p>
-                        <div class="info-box">
-                            <p class="text-s hours">220 hours</p>
-                            <p class="text-s rating">94% (4.2K)</p>
-                        </div>
-                    </div>
-                </a>
-                <div class="text-s tag">Best Seller</div>
-                <button class="bookmark">
-                    <i class="fa-regular fa-bookmark"></i>
-                </button>
-            </div>
-            <div class="grid-item">
-                <a href="" class="content">
-                    <img src="~/img/courses/laptop.png" alt="">
-                    <div class="text-box">
-                        <p class="h5">Fullstack web developer courses from scratch</p>
-                        <p class="text-s">By Robert Fox</p>
-                        <p class="text-l price">$12.50</p>
-                        <div class="info-box">
-                            <p class="text-s hours">220 hours</p>
-                            <p class="text-s rating">94% (4.2K)</p>
-                        </div>
-                    </div>
-                </a>
-                <div class="text-s tag">Best Seller</div>
-                <button class="bookmark">
-                    <i class="fa-regular fa-bookmark"></i>
-                </button>
-            </div>
-            <div class="grid-item">
-                <a href="" class="content">
-                    <img src="~/img/courses/laptop.png" alt="">
-                    <div class="text-box">
-                        <p class="h5">Fullstack web developer courses from scratch</p>
-                        <p class="text-s">By Robert Fox</p>
-                        <p class="text-l price">$12.50</p>
-                        <div class="info-box">
-                            <p class="text-s hours">220 hours</p>
-                            <p class="text-s rating">94% (4.2K)</p>
-                        </div>
-                    </div>
-                </a>
-                <div class="text-s tag">Best Seller</div>
-                <button class="bookmark">
-                    <i class="fa-regular fa-bookmark"></i>
-                </button>
-            </div>
-            <div class="grid-item">
-                <a href="" class="content">
-                    <img src="~/img/courses/laptop.png" alt="">
-                    <div class="text-box">
-                        <p class="h5">Fullstack web developer courses from scratch</p>
-                        <p class="text-s">By Robert Fox</p>
-                        <p class="text-l price">$12.50</p>
-                        <div class="info-box">
-                            <p class="text-s hours">220 hours</p>
-                            <p class="text-s rating">94% (4.2K)</p>
-                        </div>
-                    </div>
-                </a>
-                <div class="text-s tag">Best Seller</div>
-                <button class="bookmark">
-                    <i class="fa-regular fa-bookmark"></i>
-                </button>
-            </div>
-            <div class="grid-item">
-                <a href="" class="content">
-                    <img src="~/img/courses/laptop.png" alt="">
-                    <div class="text-box">
-                        <p class="h5">Fullstack web developer courses from scratch</p>
-                        <p class="text-s">By Robert Fox</p>
-                        <p class="text-l price">$12.50</p>
-                        <div class="info-box">
-                            <p class="text-s hours">220 hours</p>
-                            <p class="text-s rating">94% (4.2K)</p>
-                        </div>
-                    </div>
-                </a>
-                <div class="text-s tag">Best Seller</div>
-                <button class="bookmark">
-                    <i class="fa-regular fa-bookmark"></i>
-                </button>
-            </div>
+                }
+            }
         </div>
         <div class="pagination-box">
 

@@ -1,7 +1,9 @@
-﻿<partial name="~/Views/Shared/Sections/_HeroPartial.cshtml" />
+﻿@model SubscribeViewModel
+
+<partial name="~/Views/Shared/Sections/_HeroPartial.cshtml" />
 <partial name="~/Views/Shared/Sections/_WhatugetPartial.cshtml" />
 <partial name="~/Views/Shared/Sections/_LightdarkswitchPartial.cshtml" />
 <partial name="~/Views/Shared/Sections/_ManageyourworkPartial.cshtml" />
 <partial name="~/Views/Shared/Sections/_DownloadourappPartial.cshtml" />
 <partial name="~/Views/Shared/Sections/_IntegratetoptoolsPartial.cshtml" />
-<partial name="~/Views/Shared/Sections/_NewsletterPartial.cshtml" />
+<partial name="~/Views/Shared/Sections/_NewsletterPartial.cshtml" model="Model"/>

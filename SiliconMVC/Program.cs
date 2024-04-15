@@ -12,7 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRouting(x => x.LowercaseUrls = true);
 
-builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Home")));
+builder.Services.AddHttpClient();
+builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Work")));
 
 builder.Services.AddIdentity<UserEntity, IdentityRole>(x =>
 {
@@ -24,7 +25,7 @@ builder.Services.AddIdentity<UserEntity, IdentityRole>(x =>
 
 builder.Services.ConfigureApplicationCookie(x =>
 {
-    x.LoginPath = "/auth/signin";
+    x.LoginPath = "/signin";
     x.LogoutPath = "/";
     x.Cookie.HttpOnly = true;
     x.Cookie.SecurePolicy = CookieSecurePolicy.Always;

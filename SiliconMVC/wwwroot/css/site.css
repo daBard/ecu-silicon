@@ -539,6 +539,7 @@ form textarea {
   width: -webkit-fill-available;
   border: 1px solid var(--gray-500);
   border-radius: 8px;
+  background-color: var(--white);
   color: var(--gray-700);
   padding: 0.5rem;
 }
@@ -639,6 +640,10 @@ header .container #menu .btn-switch {
   header .container #menu .btn-switch {
     display: flex;
   }
+}
+header .container #menu .header-profile img {
+  height: 3rem;
+  border-radius: 50%;
 }
 header .container #menu .account-buttons {
   grid-area: buttons;
@@ -1170,6 +1175,7 @@ section.account-details .container .side .avatar-box {
 }
 section.account-details .container .side .avatar-box .avatar-img {
   width: 100%;
+  border-radius: 50%;
 }
 section.account-details .container .side .avatar-box .change-avatar {
   position: absolute;
@@ -1184,6 +1190,14 @@ section.account-details .container .side .avatar-box .change-avatar {
   border: 1px solid var(--gray-300);
   border-radius: 15px;
   cursor: pointer;
+}
+section.account-details .container .side .avatar-box .change-avatar #fileUploader {
+  display: none;
+}
+section.account-details .container .side .avatar-box .change-avatar label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section.account-details .container .side .short-info-box {
   grid-area: shortinfo;
@@ -1262,11 +1276,16 @@ section.courses .heading-box .input-box {
   display: flex;
   gap: 1rem;
 }
-section.courses .heading-box .input-box #categories input[list=browsers] {
+section.courses .heading-box .input-box #category-filter select {
+  line-height: 160%;
+  font-weight: 400;
+  color: var(--gray-700);
+  font-family: "Manrope", sans-serif;
+  font-size: 12px !important;
   border: 1px solid var(--gray-500);
   border-radius: 8px;
-  color: var(--gray-500);
-  padding: 0.5rem;
+  color: var(--gray-700);
+  padding: 0.5rem 0.75rem;
 }
 section.courses .heading-box .input-box #search {
   position: relative;
@@ -1297,14 +1316,20 @@ section.courses .grid-box .grid-item {
   box-shadow: 0px 2px 6.4px -1px rgba(19, 16, 34, 0.03), 0px 4.4px 12px -1px rgba(19, 16, 34, 0.06);
   position: relative;
   border-radius: 8px;
-  padding-bottom: 1rem;
 }
 section.courses .grid-box .grid-item:hover {
   box-shadow: 0px 4px 13px -2px rgba(19, 16, 34, 0.06), 0px 4.8px 24.4px -6px rgba(19, 16, 34, 0.1);
-  scale: 1.05;
+  /*scale: 1.01;*/
+}
+section.courses .grid-box .grid-item:hover .content .text-box p.h5 {
+  text-decoration: underline;
 }
 section.courses .grid-box .grid-item .content {
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0.5rem;
 }
 section.courses .grid-box .grid-item .content img {
   border-radius: 8px 8px 0 0;
@@ -1313,30 +1338,35 @@ section.courses .grid-box .grid-item .content img {
   object-fit: cover;
 }
 section.courses .grid-box .grid-item .content .text-box {
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
+}
+section.courses .grid-box .grid-item .content .text-box p.h5 {
+  flex: 1 1 auto;
 }
 section.courses .grid-box .grid-item .content .text-box .price {
+  flex: 0 1 auto;
   font-weight: bold;
 }
-section.courses .grid-box .grid-item .content .text-box .price.sale {
+section.courses .grid-box .grid-item .content .text-box .price.sale-new {
   color: #EF4444;
 }
-section.courses .grid-box .grid-item .content .text-box .price.sale::after {
-  padding-left: 0.5rem;
-  font-weight: 400;
-  color: var(--gray-600);
-  content: "$1.50";
+section.courses .grid-box .grid-item .content .text-box .price.sale-old {
+  color: var(--gray-500);
+  font-weight: 500;
+  text-decoration: line-through;
 }
-section.courses .grid-box .grid-item .content .info-box {
+section.courses .grid-box .grid-item .content .text-box .info-box {
+  flex: 0 1 auto;
   display: flex;
   gap: 1rem;
   padding-top: 1rem;
   border-top: 1px solid var(--gray-300);
 }
-section.courses .grid-box .grid-item .content .info-box .hours, section.courses .grid-box .grid-item .content .info-box .rating {
+section.courses .grid-box .grid-item .content .text-box .info-box .hours, section.courses .grid-box .grid-item .content .text-box .info-box .rating {
   color: var(--gray-600);
 }
 section.courses .grid-box .grid-item .tag {

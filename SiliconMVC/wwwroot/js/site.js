@@ -8,6 +8,7 @@ let domMenu = document.getElementById("menu")
 
 function MenuButton_Clicked() {
     domMenu.classList.toggle("active")
+    console.log("KLICK")
 }
 
 //// Light/Dark Toggle
@@ -40,3 +41,23 @@ domCheckbox.addEventListener('change', (cb) => {
     )
     sessionStorage.setItem('theme', cb.target.checked ? 'dark' : 'light')
 })
+
+//// Upload profile image
+document.addEventListener('DOMContentLoaded', () => {
+    handleProfileImageUpload()
+})
+
+function handleProfileImageUpload() {
+    try {
+        let fileUploader = document.querySelector('#fileUploader')
+
+        if (fileUploader != undefined) {
+            fileUploader.addEventListener('change', function () {
+                if (this.files.length > 0) {
+                    this.form.submit()
+                }
+            })
+        }
+    }
+    catch { console.log( "Error - js handleProfileImageUpload" ) }
+}

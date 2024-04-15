@@ -1,41 +1,46 @@
-﻿<form method="post" id="login-form" asp-controller="Home" asp-action="SubscribeToNewsletter" novalidate>
+﻿@model SubscribeViewModel
+
+<form method="post" id="login-form" asp-controller="Home" asp-action="SubscribeToNewsletter" novalidate>
     <div class="selections">
         <h3 class="h5">Sign up for newsletters</h3>
         <div class="checkboxgrid">
             <div class="griditem">
-                <input type="checkbox" id="daily" name="daily" value="dailyNewsletter">
-                <label for="daily" class="text-s"> Daily Newsletter</label>
+                <input asp-for="Subscriber.DailyNewsletter" />
+                <label asp-for="Subscriber.DailyNewsletter" class="text-s"> Daily Newsletter</label>
             </div>
             <div class="griditem">
-                <input type="checkbox" id="advert" name="advert" value="advertisingUpdate">
-                <label for="advert" class="text-s"> Advertising Updates</label>
+                <input asp-for="Subscriber.AdvertisingUpdates" />
+                <label asp-for="Subscriber.AdvertisingUpdates" class="text-s"> Advertising Updates</label>
             </div>
             <div class="griditem">
-                <input type="checkbox" id="week" name="week" value="weekReview">
-                <label for="week" class="text-s"> Week in Review</label>
+                <input asp-for="Subscriber.WeekInReview" />
+                <label asp-for="Subscriber.WeekInReview" class="text-s"> Week in Review</label>
             </div>
             <div class="griditem">
-                <input type="checkbox" id="event" name="event" value="eventUpdate">
-                <label for="event" class="text-s"> Event Updates</label>
+                <input asp-for="Subscriber.EventUpdates" />
+                <label asp-for="Subscriber.EventUpdates" class="text-s"> Event Updates</label>
             </div>
             <div class="griditem">
-                <input type="checkbox" id="startups" name="startups" value="startupsWeekley">
-                <label for="startups" class="text-s"> Startups Weekly</label>
+                <input asp-for="Subscriber.StartupsWeekly" />
+                <label asp-for="Subscriber.StartupsWeekly" class="text-s"> Startups Weekly</label>
             </div>
             <div class="griditem">
-                <input type="checkbox" id="podcasts" name="podcasts" value="podcasts">
-                <label for="podcasts" class="text-s"> Podcasts</label>
+                <input asp-for="Subscriber.Podcasts" />
+                <label asp-for="Subscriber.Podcasts" class="text-s"> Podcasts</label>
             </div>
         </div>
     </div>
     <div class="submitbox">
-        <label for="email">
+        <label asp-for="Subscriber.Email">
             <i class="fa-regular fa-envelope"></i>
-            <input type="text" id="email" name="email" placeholder="Your Email">
+            <input asp-for="Subscriber.Email" id="email" placeholder="Your Email">
         </label>
 
-        <input type="submit" class="btn-theme" value="*Submit">
+        <button type="submit" class="btn-theme">Subscribe *</button>
     </div>
     <p class="text-s">* Yes, I agree to the <a href="">terms</a> and <a href="">privacy policy</a>.</p>
+    <div>
+        <p class="text-s">@TempData["StatusMessage"]</p>
+    </div>
 
 </form>
