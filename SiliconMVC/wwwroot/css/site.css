@@ -1033,7 +1033,7 @@ section.newsletter .container form .submitbox label {
   align-items: center;
   flex-grow: 1;
   gap: 0.5rem;
-  height: 2rem;
+  height: auto;
   padding: 0 0.5rem;
   border: 1px solid var(--gray-500);
   border-radius: 8px;
@@ -1050,10 +1050,12 @@ section.newsletter .container form .submitbox label:focus-within i {
 }
 section.newsletter .container form .submitbox label #email {
   height: auto;
-  color: var(--gray-500);
+  color: var(--gray-700) !important;
+  background-color: var(--white);
   width: 100%;
   border: none;
   padding: 0;
+  font-size: 1rem;
 }
 section.newsletter .container form .submitbox label #email:focus, section.newsletter .container form .submitbox label #email:focus-visible {
   color: var(--gray-700);

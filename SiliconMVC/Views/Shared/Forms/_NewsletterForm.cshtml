@@ -40,7 +40,10 @@
     </div>
     <p class="text-s">* Yes, I agree to the <a href="">terms</a> and <a href="">privacy policy</a>.</p>
     <div>
+        <span asp-validation-for="Subscriber.Email"></span>
         <p class="text-s">@TempData["StatusMessage"]</p>
     </div>
 
 </form>
+
+<partial name="~/Views/Shared/Scripts/_FormValidationPartial.cshtml" />
