@@ -1441,3 +1441,15 @@ section.workwithus .container .text span {
     padding: 5rem;
   }
 }
+section#cookie-consent {
+  position: fixed;
+  bottom: 0;
+  background-color: #6366F1;
+  padding: 1rem;
+}
+section#cookie-consent .container {
+  gap: 3rem;
+}
+section#cookie-consent .container span {
+  color: #F3F6FF;
+}

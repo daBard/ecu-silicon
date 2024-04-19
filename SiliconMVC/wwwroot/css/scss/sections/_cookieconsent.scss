@@ -1,0 +1,14 @@
+section#cookie-consent {
+    position: fixed;
+    bottom: 0;
+    background-color: $theme;
+    padding: 1rem;
+
+    .container {
+        gap: 3rem;
+
+        span {
+            color: $gray-100;
+        }
+    }
+}
